@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silvassa Real Estate</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ANNOUNCEMENT BAR -->
+  <div id="announcementBar" class="announcement-bar">
+    <a id="announcementLink" class="announcement-text" href="#">
+      🚀 New Project Launching Soon!
+    </a>
+  </div>
+
+  <header class="header">
+    <a class="logo" href="index.html" aria-label="Silvassa Group Home">
+      <img src="assets/Silvassa-Group-Surat-525x328.png" alt="SILVASSA GROUP">
+      <div class="brand-text">
+        <span class="brand-eyebrow">Since 2016</span>
+        <span class="brand-name">Silvassa Group</span>
+        <span class="brand-tagline">Premium Properties</span>
+      </div>
+    </a>
+
+    <nav class="header-nav" aria-label="Primary">
+      <a href="index.html" class="is-active">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-contact-pill" href="tel:+919090129012">
+        <span>Call Us</span>
+        <strong>+91 90901 29012</strong>
+      </a>
+      <a class="header-cta" href="contact.html">Book Site Visit</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu__head">
+      <div class="mobile-menu__brand">
+        <span class="brand-eyebrow">Silvassa Group</span>
+        <strong>Premium Properties</strong>
+      </div>
+      <button id="menuClose" aria-label="Close menu">✕</button>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:+919090129012">Call Us</a>
+  </div>
+  <div class="overlay" id="menuOverlay"></div>
+
+  <section class="hero relative">
+    <div class="hero-overlay"></div>
+    <div class="hero-text animate-on-scroll slide-up">
+      <p>Silvassa Group Projects</p>
+      <h1>Luxury Living<br/>in Prime Locations</h1>
+      <a href="#properties" class="btn btn-gold outline-glow">Explore Projects</a>
+    </div>
+  </section>
+
+  <!-- ABOUT DEVELOPER -->
+  <section class="about-dev animate-on-scroll fade-in">
+    <div class="about-dev-container">
+      <h2>Building Trust, Creating Value</h2>
+      <p>Silvassa Group is a premier real estate developer dedicated to delivering luxury residential and commercial spaces. With a commitment to quality, transparency, and timely delivery, we create environments that elevate lifestyles and offer exceptional value to our customers and investors.</p>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why-us animate-on-scroll slide-up">
+    <div class="why-us-container">
+      <h2>Why Choose Us</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <i class="fa-solid fa-handshake" style="font-size: 36px; color: var(--champagne); margin-bottom: 16px;"></i>
+          <h3>Trusted Developer</h3>
+          <p>Decades of experience delivering on our promises with complete transparency.</p>
+        </div>
+        <div class="why-card">
+          <i class="fa-solid fa-map-location-dot" style="font-size: 36px; color: var(--champagne); margin-bottom: 16px;"></i>
+          <h3>Prime Locations</h3>
+          <p>Properties situated in the most sought-after and high-growth areas.</p>
+        </div>
+        <div class="why-card">
+          <i class="fa-solid fa-building" style="font-size: 36px; color: var(--champagne); margin-bottom: 16px;"></i>
+          <h3>Premium Construction</h3>
+          <p>Uncompromising quality and attention to detail in every build.</p>
+        </div>
+        <div class="why-card">
+          <i class="fa-solid fa-shield-halved" style="font-size: 36px; color: var(--champagne); margin-bottom: 16px;"></i>
+          <h3>Transparent Process</h3>
+          <p>Clear communication and ethical practices throughout your journey.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="properties" class="properties animate-on-scroll fade-in">
+    <div class="properties-head">
+      <div>
+        <h2>Properties</h2>
+        <p class="project-count"><span id="projectCount">0</span> projects</p>
+      </div>
+      <button class="filter-btn icon-only" id="openFilters" aria-label="Open filters">
+        <span class="filter-icon">⚲</span>
+      </button>
+    </div>
+
+    <div class="slider-container">
+      <button class="slide-btn" id="prevBtn">❮</button>
+
+      <div class="slider">
+        <div class="slider-track" id="propertyTrack">
+          <!-- cards injected by JS -->
+        </div>
+      </div>
+
+
+      <button class="slide-btn" id="nextBtn">❯</button>
+    </div>
+
+    <!-- DOTS (MOBILE ONLY) -->
+    <div class="slider-dots" id="sliderDots"></div>
+  </section>
+
+  <aside class="filter-panel" id="filterPanel" aria-hidden="true">
+    <div class="filter-panel__head">
+      <h3>Filters</h3>
+      <button id="closeFilters" aria-label="Close filters">✕</button>
+    </div>
+
+    <div class="filter-group">
+      <h4>Categories</h4>
+      <div class="filter-options" id="filterTypes"></div>
+    </div>
+
+    <div class="filter-group">
+      <h4>Status</h4>
+      <div class="filter-options" id="filterStatus"></div>
+    </div>
+
+    <div class="filter-group">
+      <h4>Locations</h4>
+      <div class="filter-options" id="filterLocations"></div>
+    </div>
+
+    <div class="filter-actions">
+      <button class="filter-apply" id="applyFilters">Apply Filters</button>
+      <button class="filter-clear" id="clearFilters">Clear All</button>
+    </div>
+  </aside>
+  <div class="overlay" id="filterOverlay"></div>
+
+  <section class="valuation animate-on-scroll slide-up">
+    <div class="valuation-container glass-panel">
+      <h2>Exclusive Property Valuation</h2>
+      <p>Expert valuation, personalized consultation, and distinguished guidance for your portfolio.</p>
+
+      <div class="valuation-actions">
+        <button class="btn btn-gold outline-glow" onclick="openValuationModal()">FIND OUT HOW</button>
+        <a href="https://wa.me/9090129012" target="_blank" class="btn btn-gold outline-glow whatsapp-cta">
+          <i class="fa-brands fa-whatsapp"></i> ENQUIRE NOW
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <a id="stickyEnquire" href="#" onclick="openStickyEnquiry()">Enquire Now</a>
+
+  <footer class="footer animate-on-scroll fade-in">
+    <div class="footer-col footer-brand">
+      <h4>Silvassa Group</h4>
+      <p>
+વિશ્વાસ, ગુણવત્તા અને ભવિષ્યના વિકાસ સાથે રેસિડેન્શિયલ અને કોમર્શિયલ મિલ્કતોનું સુવ્યવસ્થિત નિર્માણ  
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><i class="fa-solid fa-phone"></i> +91 9090129012</p>
+      <p><i class="fa-solid fa-envelope"></i> silvassagroupsurat2017@gmail.com</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Business Hours</h4>
+      <p>Mon–Sun: 9:30AM – 6:30PM</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Get Social</h4>
+      <div class="social-icons">
+        <a href="https://www.facebook.com"><img src="assets/facebook.png" alt=""></a>
+        <a href="https://www.instagram.com/silvassa__group"><img src="assets/instagram.png" alt=""></a>
+        <a href="https://www.LinkedIn.com"><img src="assets/linkedin_logo.png" alt=""></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Silvassa Group. All rights reserved.
+    </div>
+
+  </footer>
+
+  <!-- VALUATION MODAL -->
+  <div class="modal" id="valuationModal">
+    <div class="modal-box glass-panel animate-on-scroll scale-in">
+      <span class="modal-close" onclick="closeValuationModal()">×</span>
+      <h3>Share your interest</h3>
+
+      <input id="valName" placeholder="Your Name">
+      <input id="valPhone" placeholder="Phone Number">
+      <input id="valLocation" placeholder="interested Property / Location">
+      <textarea id="valDetails" placeholder="Details"></textarea>
+
+      <button onclick="submitValuation()">Submit</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+
+  <script>
+    const announcementConfig = {
+      enabled: 0 ,         //true = show , false = hide
+      message: "🚀 New Project Embro park 2  – Pre-booking Open! (click to view)",
+      type: "new",
+      projectId: 10,      // 🔴 must exist in sites.json
+      speed: 50,
+    };
+
+    const bar = document.getElementById("announcementBar");
+    const link = document.getElementById("announcementLink");
+
+    if (announcementConfig.enabled) {
+      bar.style.display = "block";
+      bar.classList.add(announcementConfig.type);
+
+      link.textContent = announcementConfig.message;
+
+      /* 🔥 IMPORTANT: correct relative path */
+      link.href = "./site.html?id=" + announcementConfig.projectId;
+
+      link.style.animationDuration = announcementConfig.speed + "s";
+    } else {
+      bar.style.display = "none";
+    }
+
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Details</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <a class="logo" href="index.html" aria-label="Silvassa Group Home">
+      <img src="assets/Silvassa-Group-Surat-525x328.png" alt="SILVASSA GROUP">
+      <div class="brand-text">
+        <span class="brand-eyebrow">Since 2017</span>
+        <span class="brand-name">Silvassa Group</span>
+        <span class="brand-tagline">Premium Properties</span>
+      </div>
+    </a>
+
+    <nav class="header-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="projects.html" class="is-active">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-contact-pill" href="tel:+919090129012">
+        <span>Call Us</span>
+        <strong>+91 90901 29012</strong>
+      </a>
+      <a class="header-cta" href="contact.html">Book Site Visit</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu__head">
+      <div class="mobile-menu__brand">
+        <span class="brand-eyebrow">Silvassa Group</span>
+        <strong>Premium Properties</strong>
+      </div>
+      <button id="menuClose" aria-label="Close menu">✕</button>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:+919090129012">Call Us</a>
+  </div>
+  <div class="overlay" id="menuOverlay"></div>
+
+<section class="property-detail animate-on-scroll fade-in">
+  <div id="details"></div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" alt="">
+</div>
+
+<!-- Floor Plan Unlock -->
+<div id="floorUnlockModal" class="modal" onclick="closeFloorUnlockModal()">
+  <div class="modal-box floor-unlock-box" onclick="event.stopPropagation()">
+    <span class="modal-close" onclick="closeFloorUnlockModal()">x</span>
+    <h3>Unlock Floor Plan</h3>
+    <p class="floor-unlock-copy">Enter your details to view this floor plan.</p>
+    <input id="floorLeadName" type="text" placeholder="Your Name">
+    <input id="floorLeadPhone" type="tel" placeholder="Mobile Number">
+    <button id="floorLeadSubmitBtn" type="button" onclick="submitFloorPlanLead()">Submit & View</button>
+    <p id="floorLeadError" class="floor-lead-error"></p>
+  </div>
+</div>
+
+<!-- Sticky Enquiry -->
+<a id="stickyEnquire" href="#" onclick="openStickyEnquiry()">Enquire Now</a>
+
+  <footer class="footer animate-on-scroll fade-in">
+    <div class="footer-col footer-brand">
+      <h4>Silvassa Group</h4>
+      <p>
+વિશ્વાસ, ગુણવત્તા અને ભવિષ્યના વિકાસ સાથે રેસિડેન્શિયલ અને કોમર્શિયલ મિલ્કતોનું સુવ્યવસ્થિત નિર્માણ  
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><i class="fa-solid fa-phone"></i> +91 9090129012</p>
+      <p><i class="fa-solid fa-envelope"></i> silvassagroupsurat2017@gmail.com</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Business Hours</h4>
+      <p>Mon–Sun: 9:30AM – 6:30PM</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Get Social</h4>
+      <div class="social-icons">
+        <a href="https://www.facebook.com"><img src="assets/facebook.png" alt=""></a>
+        <a href="https://www.instagram.com/silvassa__group"><img src="assets/instagram.png" alt=""></a>
+        <a href="https://www.LinkedIn.com"><img src="assets/linkedin_logo.png" alt=""></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Silvassa Group. All rights reserved.
+    </div>
+  </footer>
+
+<script>
+const id = new URLSearchParams(window.location.search).get("id");
+let galleryImages = [];
+let currentIndex = 0;
+let currentProperty = {};
+let floorPlanUnlocked = false;
+let pendingFloorPlanSrc = "";
+let galleryAutoSlideInterval = null;
+
+const STORAGE_KEYS = {
+  unlockPrefix: "sg_floor_unlock_"
+};
+
+const FLOORPLAN_LEAD_WHATSAPP = "9090129012";
+const PROPERTY_ENQUIRY_WHATSAPP = "9090129012";
+const FLOORPLAN_LEAD_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwVqqXvt60rFxYjRjt5NGTOfwfOAJG4wZr9205K-SeNM8zTJBpJbB1sKwMwRZWe40U7AQ/exec";
+
+function buildWhatsAppMessage(lines) {
+  return encodeURIComponent(lines.join("\n"));
+}
+
+function buildPropertyEnquiryMessage(site, areaMeta) {
+  return buildWhatsAppMessage([
+    "Hello Silvassa Group,",
+    "",
+    "I am interested in this property. Please share complete details.",
+    "",
+    "Property Summary:",
+    `Property: ${site.name || "-"}`,
+    `Type: ${site.type || "-"}`,
+    `Size: ${site.size || "-"}`,
+    `${areaMeta.label}: ${areaMeta.value || "-"}`,
+    `Location: ${site.location || "-"}`,
+    `Property ID: ${site.id || "-"}`,
+    "",
+    "Required Information:",
+    "1) Price and payment plan",
+    "2) Availability and possession timeline",
+    "3) Site visit timing",
+    "",
+    "Thank you."
+  ]);
+}
+
+function getUnlockKey(propertyId) {
+  return `${STORAGE_KEYS.unlockPrefix}${propertyId}`;
+}
+
+function isFloorPlanUnlocked(propertyId) {
+  return localStorage.getItem(getUnlockKey(propertyId)) === "1";
+}
+
+function unlockFloorPlan(propertyId) {
+  localStorage.setItem(getUnlockKey(propertyId), "1");
+}
+
+function normalizePhone(value) {
+  return value.replace(/\D/g, "");
+}
+
+function isValidPhone(value) {
+  const digits = normalizePhone(value);
+  return /^(91)?[6-9]\d{9}$/.test(digits);
+}
+
+function formatArea(site) {
+  if (site.areaSqFt && site.areaSqM) {
+    return `${site.areaSqFt} sq. ft | ${site.areaSqM} sq. m`;
+  }
+  if (site.areaSqFt) {
+    const sqm = (Number(site.areaSqFt) * 0.092903).toFixed(2);
+    return `${site.areaSqFt} sq. ft | ${sqm} sq. m`;
+  }
+  if (site.areaSqM) {
+    const sqft = (Number(site.areaSqM) * 10.7639).toFixed(2);
+    return `${sqft} sq. ft | ${site.areaSqM} sq. m`;
+  }
+  if (site.area) return site.area;
+  return "-";
+}
+
+function getAreaMeta(site) {
+  if (site.plotSize) {
+    return { label: "Plot Size", value: site.plotSize };
+  }
+  return { label: "Area", value: formatArea(site) };
+}
+
+fetch("sites.json")
+.then(res => res.json())
+.then(data => {
+  const site = data.find(p => String(p.id) === String(id));
+  if (!site) return;
+  const areaMeta = getAreaMeta(site);
+  const descriptionItems = Array.isArray(site.description)
+    ? site.description
+    : (site.description ? [site.description] : []);
+
+  currentProperty = site;
+  galleryImages = site.gallery || [site.image];
+  currentIndex = 0;
+  floorPlanUnlocked = isFloorPlanUnlocked(site.id);
+
+  const whatsappMessage = buildPropertyEnquiryMessage(site, areaMeta);
+
+  document.getElementById("details").innerHTML = `
+  <!-- PROJECT HERO HEADER -->
+  <div class="project-hero">
+    <img src="${galleryImages[0]}" class="project-hero-bg">
+    <div class="project-hero-overlay">
+      <div class="project-hero-content animate-on-scroll slide-up">
+        <span class="status-badge ${site.status}">${
+          site.status === "completed" ? "Completed" : site.status === "ongoing" ? "Ongoing" : "New Launch"
+        }</span>
+        <h1>${site.name}</h1>
+        <p><i class="fa-solid fa-location-dot"></i> ${site.location || "-"}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-card">
+    <!-- PROJECT OVERVIEW (2-COLUMN) -->
+    <div class="project-overview-container animate-on-scroll fade-in">
+      <div class="project-desc-col">
+        <h3>Overview</h3>
+        <ul>
+          ${descriptionItems.map(d => `<li>${d}</li>`).join("")}
+        </ul>
+      </div>
+      <div class="project-facts-col">
+        <h3>Quick Facts</h3>
+        <ul class="facts-list">
+          <li><span>Type</span> <strong>${site.type || "-"}</strong></li>
+          <li><span>Size</span> <strong>${site.size || "-"}</strong></li>
+          <li><span>${areaMeta.label}</span> <strong>${areaMeta.value}</strong></li>
+          <li><span>Address</span> <strong>${site.address || "-"}</strong></li>
+        </ul>
+        <a href="https://wa.me/${PROPERTY_ENQUIRY_WHATSAPP}?text=${whatsappMessage}" target="_blank" class="btn btn-gold outline-glow whatsapp-cta">
+          <i class="fa-brands fa-whatsapp"></i> ENQUIRE NOW
+        </a>
+      </div>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="detail-gallery animate-on-scroll fade-in">
+      <div class="gallery-main">
+        <button class="gallery-arrow left" onclick="changeImage(-1)">&#10094;</button>
+        <img id="mainImage" src="${galleryImages[0]}" onclick="openLightbox(this.src)">
+        <button class="gallery-arrow right" onclick="changeImage(1)">&#10095;</button>
+      </div>
+
+      <div class="gallery-thumbs-wrapper">
+        <button class="thumb-arrow" onclick="slideThumbs(-1)">&#10094;</button>
+        <div class="gallery-thumbs" id="thumbContainer">
+          ${galleryImages.map((img,i)=>`<img src="${img}" onclick="setImage(${i})">`).join("")}
+        </div>
+        <button class="thumb-arrow" onclick="slideThumbs(1)">&#10095;</button>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="detail-content">
+${site.highlights ? `
+<div class="info-block">
+  <h4>Key Highlights</h4>
+  <ul style="list-style: none; padding: 0;">
+    ${site.highlights.map(h=>`<li style="margin-bottom: 12px; display: flex; align-items: flex-start; color: var(--emerald);"><i class="fa-solid fa-check-circle" style="color: var(--champagne); font-size: 16px; margin-right: 12px; margin-top: 3px;"></i> <span>${h}</span></li>`).join("")}
+  </ul>
+</div>` : ""}
+
+${site.amenities ? `
+<div class="info-block animate-on-scroll slide-up amenities-section" style="background: transparent; border: none; box-shadow: none;">
+  <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 32px; color: var(--champagne); margin-bottom: 30px;">FEATURES &<br/>AMENITIES</h2>
+  <ul class="amenities-grid">
+    ${site.amenities.map(a=>`
+      <li class="amenity-card">
+        ${getIconForText(a)}
+        <span class="amenity-name">${a}</span>
+      </li>
+    `).join("")}
+  </ul>
+</div>` : ""}
+
+${site.connectivity ? `
+<div class="info-block animate-on-scroll slide-up" style="background: transparent; border: none; box-shadow: none; margin-top: 40px;">
+  <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 32px; color: var(--champagne); margin-bottom: 30px;">CONNECTIVITY</h2>
+  <ul class="connectivity-modern-list">
+    ${site.connectivity.map(a=>`
+      <li>
+        <span class="conn-icon"><i class="fa-solid fa-location-arrow"></i></span>
+        <span class="conn-text">${a}</span>
+      </li>
+    `).join("")}
+  </ul>
+</div>` : ""}
+
+${site.floorPlans ? `
+<div class="info-block">
+  <h4>Floor Plans</h4>
+  <div class="floor-plans">
+    ${site.floorPlans.map((img, i)=>`
+      <button type="button" class="floor-plan-gate ${floorPlanUnlocked ? "is-unlocked" : "is-locked"}" onclick="handleFloorPlanClick(${i})">
+        <img src="${img}" alt="Floor plan ${i + 1}">
+      </button>
+    `).join("")}
+  </div>
+</div>` : ""}
+
+
+      <div class="map-embed">
+        <iframe src="${site.mapEmbed}" loading="lazy"></iframe>
+      </div>
+
+      <div class="contact-actions">
+  <a class="whatsapp-btn"
+     href="https://wa.me/${PROPERTY_ENQUIRY_WHATSAPP}?text=${whatsappMessage}"
+     target="_blank">
+    Enquire on WhatsApp
+  </a>
+
+  <a class="call-btn" href="tel:7990521795">
+    Call Now
+  </a>
+</div>
+
+
+  </div>`;
+  
+  startGalleryAutoSlide();
+
+  // Initialize observer right after injecting
+  setTimeout(initScrollObserver, 100);
+});
+
+/* Gallery */
+function stopGalleryAutoSlide() {
+  if (galleryAutoSlideInterval) {
+    clearInterval(galleryAutoSlideInterval);
+    galleryAutoSlideInterval = null;
+  }
+}
+
+function startGalleryAutoSlide() {
+  stopGalleryAutoSlide();
+  if (galleryImages.length <= 1) return;
+
+  galleryAutoSlideInterval = setInterval(() => {
+    changeImage(1, false);
+  }, 4000);
+}
+
+function setImage(i, resetAutoSlide = true){
+  currentIndex=i;
+  mainImage.src=galleryImages[i];
+  if (resetAutoSlide) startGalleryAutoSlide();
+}
+
+function changeImage(s, resetAutoSlide = true){
+  currentIndex=(currentIndex+s+galleryImages.length)%galleryImages.length;
+  setImage(currentIndex, resetAutoSlide);
+}
+
+function slideThumbs(s){thumbContainer.scrollLeft+=s*120;}
+function openLightbox(src) {
+  const img = document.getElementById("lightbox-img");
+  img.src = "";
+  setTimeout(() => {
+    img.src = src;
+    document.getElementById("lightbox").style.display = "flex";
+  }, 10);
+}
+
+function closeLightbox(){lightbox.style.display="none";}
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    stopGalleryAutoSlide();
+    return;
+  }
+  startGalleryAutoSlide();
+});
+
+function handleFloorPlanClick(index) {
+  const floorPlans = currentProperty.floorPlans || [];
+  const src = floorPlans[index];
+  if (!src) return;
+  if (floorPlanUnlocked) {
+    openLightbox(src);
+    return;
+  }
+  pendingFloorPlanSrc = src;
+  openFloorUnlockModal();
+}
+
+function openFloorUnlockModal() {
+  document.getElementById("floorUnlockModal").style.display = "flex";
+  document.getElementById("floorLeadError").textContent = "";
+}
+
+function closeFloorUnlockModal() {
+  document.getElementById("floorUnlockModal").style.display = "none";
+}
+
+function markFloorPlansUnlockedInUI() {
+  document.querySelectorAll(".floor-plan-gate").forEach((btn) => {
+    btn.classList.remove("is-locked");
+    btn.classList.add("is-unlocked");
+  });
+}
+
+function sendFloorPlanLeadToOwner(payload) {
+  if (
+    !FLOORPLAN_LEAD_WEBHOOK_URL ||
+    FLOORPLAN_LEAD_WEBHOOK_URL === "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE"
+  ) {
+    return Promise.resolve(false);
+  }
+  const formBody = new URLSearchParams({
+    payload: JSON.stringify(payload)
+  });
+  return fetch(FLOORPLAN_LEAD_WEBHOOK_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: formBody,
+    keepalive: true
+  })
+    .then(() => true)
+    .catch(() => false);
+}
+
+function submitFloorPlanLead() {
+  const nameEl = document.getElementById("floorLeadName");
+  const phoneEl = document.getElementById("floorLeadPhone");
+  const errorEl = document.getElementById("floorLeadError");
+  const submitBtn = document.getElementById("floorLeadSubmitBtn");
+  const name = nameEl.value.trim();
+  const phone = phoneEl.value.trim();
+
+  if (!name || !phone) {
+    errorEl.textContent = "Please enter your name and mobile number.";
+    return;
+  }
+  if (!isValidPhone(phone)) {
+    errorEl.textContent = "Please enter a valid mobile number.";
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Submitting...";
+  errorEl.textContent = "";
+
+  const areaMeta = getAreaMeta(currentProperty);
+  const leadPayload = {
+    source: "floorplan_unlock",
+    name,
+    phone: normalizePhone(phone),
+    property: {
+      id: currentProperty.id || "-",
+      name: currentProperty.name || "-",
+      type: currentProperty.type || "-",
+      size: currentProperty.size || "-",
+      areaLabel: areaMeta.label,
+      areaValue: areaMeta.value || "-",
+      location: currentProperty.location || "-"
+    },
+    ownerWhatsApp: FLOORPLAN_LEAD_WHATSAPP,
+    submittedAt: new Date().toISOString()
+  };
+
+  sendFloorPlanLeadToOwner(leadPayload).finally(() => {
+    floorPlanUnlocked = true;
+    unlockFloorPlan(currentProperty.id);
+    markFloorPlansUnlockedInUI();
+    closeFloorUnlockModal();
+    nameEl.value = "";
+    phoneEl.value = "";
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit & View";
+
+    if (pendingFloorPlanSrc) {
+      openLightbox(pendingFloorPlanSrc);
+      pendingFloorPlanSrc = "";
+    }
+  });
+}
+
+/* Sticky enquiry */
+function openStickyEnquiry(){
+  if (!currentProperty || !currentProperty.id) {
+    const fallbackMsg = buildWhatsAppMessage([
+      "Hello Silvassa Group,",
+      "",
+      "I am looking for property options.",
+      "Please share available projects and current offers.",
+      "",
+      "Thank you."
+    ]);
+    window.open(`https://wa.me/${PROPERTY_ENQUIRY_WHATSAPP}?text=${fallbackMsg}`,"_blank");
+    return;
+  }
+
+  const areaMeta = getAreaMeta(currentProperty);
+  const msg = buildPropertyEnquiryMessage(currentProperty, areaMeta);
+  window.open(`https://wa.me/${PROPERTY_ENQUIRY_WHATSAPP}?text=${msg}`,"_blank");
+}
+
+function getIconForText(text) {
+  const t = text.toLowerCase();
+  const c = 'amenity-icon-style';
+  if (t.includes('park') || t.includes('garden')) return `<i class="fa-solid fa-tree ${c}"></i>`;
+  if (t.includes('lift') || t.includes('elevator')) return `<i class="fa-solid fa-elevator ${c}"></i>`;
+  if (t.includes('power') || t.includes('backup') || t.includes('electricity') || t.includes('generator')) return `<i class="fa-solid fa-bolt ${c}"></i>`;
+  if (t.includes('water')) return `<i class="fa-solid fa-faucet-drip ${c}"></i>`;
+  if (t.includes('security') || t.includes('cctv') || t.includes('guard')) return `<i class="fa-solid fa-shield-halved ${c}"></i>`;
+  if (t.includes('children') || t.includes('play')) return `<i class="fa-solid fa-child-reaching ${c}"></i>`;
+  if (t.includes('gym') || t.includes('fitness')) return `<i class="fa-solid fa-dumbbell ${c}"></i>`;
+  if (t.includes('pool')) return `<i class="fa-solid fa-water-ladder ${c}"></i>`;
+  if (t.includes('club')) return `<i class="fa-solid fa-martini-glass ${c}"></i>`;
+  if (t.includes('hall') || t.includes('banquet') || t.includes('reception')) return `<i class="fa-solid fa-champagne-glasses ${c}"></i>`;
+  if (t.includes('road') || t.includes('highway') || t.includes('transport')) return `<i class="fa-solid fa-road ${c}"></i>`;
+  if (t.includes('school')) return `<i class="fa-solid fa-school ${c}"></i>`;
+  if (t.includes('hospital')) return `<i class="fa-solid fa-hospital ${c}"></i>`;
+  if (t.includes('market') || t.includes('shop') || t.includes('mall')) return `<i class="fa-solid fa-shop ${c}"></i>`;
+  if (t.includes('gate') || t.includes('entry') || t.includes('lobby') || t.includes('waiting')) return `<i class="fa-solid fa-door-open ${c}"></i>`;
+  if (t.includes('penthouse') || t.includes('elite') || t.includes('premium')) return `<i class="fa-solid fa-crown ${c}"></i>`;
+  if (t.includes('basement') || t.includes('parking')) return `<i class="fa-solid fa-square-parking ${c}"></i>`;
+  if (t.includes('cctv')) return `<i class="fa-solid fa-video ${c}"></i>`;
+  if (t.includes('swimming')) return `<i class="fa-solid fa-water-ladder ${c}"></i>`;
+  if (t.includes('solar')) return `<i class="fa-solid fa-solar-panel ${c}"></i>`;
+
+  return `<i class="fa-solid fa-check ${c}"></i>`;
+}
+
+function initScrollObserver() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+}
+
+document.addEventListener("DOMContentLoaded", initScrollObserver);
+
+// Mobile Menu Logic
+const menuToggle = document.getElementById("menuToggle");
+const menuClose = document.getElementById("menuClose");
+const mobileMenu = document.getElementById("mobileMenu");
+const menuOverlay = document.getElementById("menuOverlay");
+
+function openMenu() {
+  if (mobileMenu && menuOverlay) {
+    mobileMenu.classList.add("active");
+    menuOverlay.classList.add("active");
+  }
+}
+
+function closeMenu() {
+  if (mobileMenu && menuOverlay) {
+    mobileMenu.classList.remove("active");
+    menuOverlay.classList.remove("active");
+  }
+}
+
+if (menuToggle) menuToggle.addEventListener("click", openMenu);
+if (menuClose) menuClose.addEventListener("click", closeMenu);
+if (menuOverlay) menuOverlay.addEventListener("click", closeMenu);
+</script>
+
+</body>
+</html>
