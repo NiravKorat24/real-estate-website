@@ -922,15 +922,17 @@ section {
 }
 
 .slider-dots span {
+  display: inline-block;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--champagne);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   transition: all 0.3s ease;
 }
 
 .slider-dots span.active {
-  background: var(--champagne-deep);
+  background: #ffffff;
   transform: scale(1.3);
 }
 
