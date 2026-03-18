@@ -453,6 +453,7 @@
   "areaSqM": "190.98",
   "status": "completed",
   "type": "Residential",
+   "soldout": "yes",
   "location": "Mota Varachha , Surat",
   "address": "Silavasa hill, Sarjan Rd, Mota Varachha, Surat, Gujarat 394101",
 
@@ -510,6 +511,7 @@
     "size": "2 BHK",
     "areaSqFt": "1112",
     "areaSqM": "103.3",
+     "soldout": "yes",
       "type": "Residential with Shops",
     "status": "completed",  
     "location": "Mota Varachha , Surat",

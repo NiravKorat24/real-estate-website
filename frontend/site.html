@@ -74,6 +74,22 @@
   </div>
 </div>
 
+<div id="soldOutModal" class="modal" onclick="closeSoldOutModal()">
+  <div class="modal-box sold-out-modal-box" onclick="event.stopPropagation()">
+    <span class="modal-close" onclick="closeSoldOutModal()">x</span>
+    <span class="sold-out-kicker">Property Update</span>
+    <h3>This Property Is Sold Out</h3>
+    <p class="sold-out-copy">
+      This project is no longer available. Here are similar properties you can explore right now.
+    </p>
+    <div id="soldOutRecommendations" class="sold-out-recommendations"></div>
+    <div class="sold-out-modal-actions">
+      <a class="sold-out-secondary-link" href="projects.html">Browse All Projects</a>
+      <button type="button" onclick="openGeneralEnquiry()">Ask For Similar Options</button>
+    </div>
+  </div>
+</div>
+
 <!-- Sticky Enquiry -->
 <a id="stickyEnquire" href="#" onclick="openStickyEnquiry()">Enquire Now</a>
 
@@ -114,6 +130,7 @@ const id = new URLSearchParams(window.location.search).get("id");
 let galleryImages = [];
 let currentIndex = 0;
 let currentProperty = {};
+let allProperties = [];
 let floorPlanUnlocked = false;
 let pendingFloorPlanSrc = "";
 let galleryAutoSlideInterval = null;
@@ -197,9 +214,118 @@ function getAreaMeta(site) {
   return { label: "Area", value: formatArea(site) };
 }
 
+function isPropertySoldOut(site) {
+  if (!site) return false;
+  return String(site.soldout || "").trim().toLowerCase() === "yes";
+}
+
+function getPropertyStatusLabel(site) {
+  if (isPropertySoldOut(site)) return "Sold Out";
+  if (site.status === "ongoing") return "Ongoing";
+  if (site.status === "completed") return "Completed";
+  return "Available";
+}
+
+function scoreRelatedProperty(baseSite, candidate) {
+  let score = 0;
+  if ((candidate.type || "").toLowerCase() === (baseSite.type || "").toLowerCase()) score += 5;
+  if ((candidate.size || "").toLowerCase() === (baseSite.size || "").toLowerCase()) score += 3;
+  if ((candidate.location || "").toLowerCase() === (baseSite.location || "").toLowerCase()) score += 2;
+  if (candidate.status === "ongoing") score += 2;
+  return score;
+}
+
+function getRelatedAvailableProperties(site, limit = 3) {
+  return (allProperties || [])
+    .filter(candidate => candidate && candidate.id !== site.id && !isPropertySoldOut(candidate))
+    .map(candidate => ({ ...candidate, relatedScore: scoreRelatedProperty(site, candidate) }))
+    .sort((a, b) => b.relatedScore - a.relatedScore || String(a.name).localeCompare(String(b.name)))
+    .slice(0, limit);
+}
+
+function buildGeneralEnquiryMessage() {
+  return buildWhatsAppMessage([
+    "Hello Silvassa Group,",
+    "",
+    "I am looking for similar available properties.",
+    "Please share the best current options and site visit details.",
+    "",
+    "Thank you."
+  ]);
+}
+
+function renderSoldOutRecommendations(site) {
+  const container = document.getElementById("soldOutRecommendations");
+  if (!container) return;
+
+  const suggestions = getRelatedAvailableProperties(site);
+  if (!suggestions.length) {
+    container.innerHTML = `
+      <p class="sold-out-empty-state">
+        No related property is available at the moment. Please contact us for the latest options.
+      </p>
+    `;
+    return;
+  }
+
+  container.innerHTML = suggestions.map((property) => {
+    const areaMeta = getAreaMeta(property);
+    return `
+      <article class="sold-out-suggestion-card">
+        <img src="${property.image || (property.gallery && property.gallery[0]) || ""}" alt="${property.name}">
+        <div class="sold-out-suggestion-body">
+          <div class="sold-out-suggestion-top">
+            <h4>${property.name}</h4>
+            <span class="sold-out-suggestion-status">${getPropertyStatusLabel(property)}</span>
+          </div>
+          <p>${property.location || "Surat, Gujarat"}</p>
+          <div class="sold-out-suggestion-meta">
+            <span>${property.size || property.type || "Property"}</span>
+            <span>${areaMeta.value || "-"}</span>
+          </div>
+          <a href="site.html?id=${property.id}" class="sold-out-suggestion-link">View Property</a>
+        </div>
+      </article>
+    `;
+  }).join("");
+}
+
+function openSoldOutModal() {
+  if (!currentProperty || !currentProperty.id) return;
+  renderSoldOutRecommendations(currentProperty);
+  document.getElementById("soldOutModal").style.display = "flex";
+}
+
+function closeSoldOutModal() {
+  document.getElementById("soldOutModal").style.display = "none";
+}
+
+function openGeneralEnquiry() {
+  closeSoldOutModal();
+  const msg = buildGeneralEnquiryMessage();
+  window.open(`https://wa.me/${PROPERTY_ENQUIRY_WHATSAPP}?text=${msg}`, "_blank");
+}
+
+function handlePropertyEnquiry() {
+  if (!currentProperty || !currentProperty.id) {
+    openGeneralEnquiry();
+    return;
+  }
+
+  if (isPropertySoldOut(currentProperty)) {
+    openSoldOutModal();
+    return;
+  }
+
+  const areaMeta = getAreaMeta(currentProperty);
+  const msg = buildPropertyEnquiryMessage(currentProperty, areaMeta);
+  window.open(`https://wa.me/${PROPERTY_ENQUIRY_WHATSAPP}?text=${msg}`, "_blank");
+}
+
 fetch("sites.json")
 .then(res => res.json())
 .then(data => {
+  allProperties = data || [];
   const site = data.find(p => String(p.id) === String(id));
   if (!site) return;
   const areaMeta = getAreaMeta(site);
@@ -211,8 +337,6 @@ fetch("sites.json")
   galleryImages = site.gallery || [site.image];
   currentIndex = 0;
   floorPlanUnlocked = isFloorPlanUnlocked(site.id);
-
-  const whatsappMessage = buildPropertyEnquiryMessage(site, areaMeta);
 
   document.getElementById("details").innerHTML = `
   <!-- PROJECT HERO HEADER -->
@@ -246,9 +370,9 @@ fetch("sites.json")
           <li><span>${areaMeta.label}</span> <strong>${areaMeta.value}</strong></li>
           <li><span>Address</span> <strong>${site.address || "-"}</strong></li>
         </ul>
-        <a href="https://wa.me/${PROPERTY_ENQUIRY_WHATSAPP}?text=${whatsappMessage}" target="_blank" class="btn btn-gold outline-glow whatsapp-cta">
+        <button type="button" class="btn btn-gold outline-glow whatsapp-cta enquiry-trigger" onclick="handlePropertyEnquiry()">
           <i class="fa-brands fa-whatsapp"></i> ENQUIRE NOW
-        </a>
+        </button>
       </div>
     </div>
 
@@ -323,11 +447,9 @@ ${site.floorPlans ? `
       </div>
 
       <div class="contact-actions">
-  <a class="whatsapp-btn"
-     href="https://wa.me/${PROPERTY_ENQUIRY_WHATSAPP}?text=${whatsappMessage}"
-     target="_blank">
+  <button type="button" class="whatsapp-btn enquiry-trigger" onclick="handlePropertyEnquiry()">
     Enquire on WhatsApp
-  </a>
+  </button>
 
   <a class="call-btn" href="tel:7990521795">
     Call Now
@@ -497,22 +619,7 @@ function submitFloorPlanLead() {
 
 /* Sticky enquiry */
 function openStickyEnquiry(){
-  if (!currentProperty || !currentProperty.id) {
-    const fallbackMsg = buildWhatsAppMessage([
-      "Hello Silvassa Group,",
-      "",
-      "I am looking for property options.",
-      "Please share available projects and current offers.",
-      "",
-      "Thank you."
-    ]);
-    window.open(`https://wa.me/${PROPERTY_ENQUIRY_WHATSAPP}?text=${fallbackMsg}`,"_blank");
-    return;
-  }
-
-  const areaMeta = getAreaMeta(currentProperty);
-  const msg = buildPropertyEnquiryMessage(currentProperty, areaMeta);
-  window.open(`https://wa.me/${PROPERTY_ENQUIRY_WHATSAPP}?text=${msg}`,"_blank");
+  handlePropertyEnquiry();
 }
 
 function getIconForText(text) {
@@ -579,6 +686,12 @@ function closeMenu() {
 if (menuToggle) menuToggle.addEventListener("click", openMenu);
 if (menuClose) menuClose.addEventListener("click", closeMenu);
 if (menuOverlay) menuOverlay.addEventListener("click", closeMenu);
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  closeFloorUnlockModal();
+  closeSoldOutModal();
+});
 </script>
 
 </body>
