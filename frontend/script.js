@@ -33,7 +33,7 @@ function renderCards(list) {
         <a href="site.html?id=${site.id}" class="property-card-inner property-card-link" aria-label="Open ${site.name}">
           <div class="card-media" style="--card-image: url('${site.image}')">
             <span class="card-badge ${site.status ? site.status.toLowerCase() : 'available'}">${statusText}</span>
-            <img src="${site.image}" alt="${site.name}">
+            <img src="${site.image}" alt="${site.name}" loading="lazy" decoding="async">
             <div class="card-overlay">
             <h3>${site.name}</h3>
             <p class="card-location">📍 ${site.location || "Surat, Gujarat"}</p>

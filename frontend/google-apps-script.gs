@@ -11,7 +11,7 @@
 */
 
 const SPREADSHEET_ID = "103bTucGoU56nnArrip9JLBx8tdWqUxap9nY55XzWYi8";
-const SHEET_NAME = "Silvassa";
+const SHEET_NAME = "Silvassa Leads";
 
 function doPost(e) {
   try {
@@ -21,20 +21,22 @@ function doPost(e) {
     const sheet = getSheet_();
     ensureHeader_(sheet);
 
+    // Formulate a clean description of customer details depending on lead source
+    let details = "";
+    if (payload.source === "project_popup_enquiry") {
+      details = payload.message || "General Project Inquiry";
+    } else if (payload.source === "floorplan_unlock") {
+      details = `Unlocked Floor Plan (${payload.property?.size || ""} ${payload.property?.type || ""})`;
+    } else {
+      details = payload.source || "Inquiry";
+    }
+
     const row = [
-      new Date(),
-      payload.source || "",
-      payload.name || "",
-      payload.phone || "",
-      payload.property?.id || "",
-      payload.property?.name || "",
-      payload.property?.type || "",
-      payload.property?.size || "",
-      payload.property?.areaLabel || "",
-      payload.property?.areaValue || "",
-      payload.property?.location || "",
-      payload.ownerWhatsApp || "",
-      payload.submittedAt || ""
+      new Date(), // Date & Time
+      payload.property?.name || "-", // Project Name
+      payload.name || "", // Customer Name
+      payload.phone || "", // Customer Phone
+      details // Customer Details / Message
     ];
     sheet.appendRow(row);
 
@@ -57,18 +59,10 @@ function testWrite() {
   ensureHeader_(sheet);
   sheet.appendRow([
     new Date(),
-    "manual_test",
+    "Test Property",
     "Test User",
     "9999999999",
-    "test-property",
-    "Test Property",
-    "Flat",
-    "2 BHK",
-    "Area",
-    "1200 sq. ft",
-    "Test City",
-    "7990521795",
-    new Date().toISOString()
+    "Manual Test Lead"
   ]);
 }
 
@@ -100,19 +94,11 @@ function getSheet_() {
 function ensureHeader_(sheet) {
   if (sheet.getLastRow() > 0) return;
   sheet.appendRow([
-    "Timestamp",
-    "Source",
+    "Date & Time",
+    "Project Name",
     "Customer Name",
     "Customer Phone",
-    "Property ID",
-    "Property Name",
-    "Property Type",
-    "Property Size",
-    "Area Label",
-    "Area Value",
-    "Property Location",
-    "Owner WhatsApp",
-    "Submitted At (ISO)"
+    "Customer Details"
   ]);
 }
 

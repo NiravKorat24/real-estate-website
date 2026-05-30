@@ -63,18 +63,6 @@
     <img id="lightbox-img" alt="">
   </div>
 
-  <!-- Floor Plan Unlock -->
-  <div id="floorUnlockModal" class="modal" onclick="closeFloorUnlockModal()">
-    <div class="modal-box floor-unlock-box" onclick="event.stopPropagation()">
-      <span class="modal-close" onclick="closeFloorUnlockModal()">x</span>
-      <h3>Unlock Floor Plan</h3>
-      <p class="floor-unlock-copy">Enter your details to view this floor plan.</p>
-      <input id="floorLeadName" type="text" placeholder="Your Name">
-      <input id="floorLeadPhone" type="tel" placeholder="Mobile Number">
-      <button id="floorLeadSubmitBtn" type="button" onclick="submitFloorPlanLead()">Submit & View</button>
-      <p id="floorLeadError" class="floor-lead-error"></p>
-    </div>
-  </div>
 
   <div id="soldOutModal" class="modal" onclick="closeSoldOutModal()">
     <div class="modal-box sold-out-modal-box" onclick="event.stopPropagation()">
@@ -91,6 +79,26 @@
       </div>
     </div>
   </div>
+
+  <!-- Classic Project Enquiry Popup -->
+  <div id="projectPopupModal" class="modal" onclick="closeProjectPopupModal()">
+    <div class="modal-box classic-popup-box" onclick="event.stopPropagation()">
+      <span class="modal-close" onclick="closeProjectPopupModal()">✕</span>
+      <span class="sold-out-kicker" style="display: block; text-align: center; margin-bottom: 8px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #9b8766; font-weight: 600;">Private Presentation</span>
+      <h3 style="margin-bottom: 10px;">Schedule A Site Visit</h3>
+      <p style="text-align: center; font-size: 14px; color: #6f6556; margin-bottom: 24px; line-height: 1.5;">
+        Please enter your details to receive premium brochures, pricing plans, and exclusive site updates for <strong id="popupProjectName">this property</strong>.
+      </p>
+      <form id="projectPopupForm" onsubmit="submitProjectPopup(event)">
+        <input id="popupName" type="text" placeholder="Your Name" required>
+        <input id="popupPhone" type="tel" placeholder="Mobile Number" required>
+        <textarea id="popupMessage" placeholder="Any specific questions or budget? (Optional)" rows="2" style="min-height: 70px;"></textarea>
+        <button id="popupSubmitBtn" type="submit">Submit Enquiry</button>
+      </form>
+      <p id="popupError" style="color: #c0392b; font-size: 13px; text-align: center; margin-top: 12px; font-weight: 500;"></p>
+    </div>
+  </div>
+
 
   <!-- Sticky Enquiry -->
   <a id="stickyEnquire" href="#" onclick="openStickyEnquiry()">Enquire Now</a>
@@ -273,7 +281,7 @@
         const areaMeta = getAreaMeta(property);
         return `
       <article class="sold-out-suggestion-card">
-        <img src="${property.image || (property.gallery && property.gallery[0]) || ""}" alt="${property.name}">
+        <img src="${property.image || (property.gallery && property.gallery[0]) || ""}" alt="${property.name}" loading="lazy" decoding="async">
         <div class="sold-out-suggestion-body">
           <div class="sold-out-suggestion-top">
             <h4>${property.name}</h4>
@@ -342,7 +350,7 @@
         document.getElementById("details").innerHTML = `
   <!-- PROJECT HERO HEADER -->
   <div class="project-hero">
-    <img src="${galleryImages[0]}" class="project-hero-bg">
+    <img src="${galleryImages[0]}" class="project-hero-bg" decoding="async" loading="eager">
     <div class="project-hero-overlay">
       <div class="project-hero-content animate-on-scroll slide-up">
         <span class="status-badge ${site.status}">${site.status === "completed" ? "Completed" : site.status === "ongoing" ? "Ongoing" : "New Launch"
@@ -382,7 +390,7 @@
       <div class="detail-gallery-ribbon" id="galleryRibbon">
         ${galleryImages.map((img, i) => `
           <div class="gallery-ribbon-item" onclick="openLightbox('${img}')">
-            <img src="${img}" alt="Project image ${i + 1}">
+            <img src="${img}" alt="Project image ${i + 1}" loading="lazy" decoding="async">
             <div class="gallery-item-hover">
               <i class="fa-solid fa-expand"></i>
             </div>
@@ -434,7 +442,7 @@ ${site.floorPlans ? `
   <div class="floor-plans">
     ${site.floorPlans.map((img, i) => `
       <button type="button" class="floor-plan-gate ${floorPlanUnlocked ? "is-unlocked" : "is-locked"}" onclick="handleFloorPlanClick(${i})">
-        <img src="${img}" alt="Floor plan ${i + 1}">
+        <img src="${img}" alt="Floor plan ${i + 1}" loading="lazy" decoding="async">
       </button>
     `).join("")}
   </div>
@@ -460,6 +468,9 @@ ${site.floorPlans ? `
 
         // Initialize observer right after injecting
         setTimeout(initScrollObserver, 100);
+
+        // Trigger classic popup after a 1.2 second delay
+        setTimeout(checkAndOpenProjectPopup, 1200);
       });
 
     /* Gallery Ribbon Controls */
@@ -491,16 +502,107 @@ ${site.floorPlans ? `
         return;
       }
       pendingFloorPlanSrc = src;
-      openFloorUnlockModal();
+      openProjectPopupModal();
     }
 
-    function openFloorUnlockModal() {
-      document.getElementById("floorUnlockModal").style.display = "flex";
-      document.getElementById("floorLeadError").textContent = "";
+    /* Classic Project Popup Functions */
+    function checkAndOpenProjectPopup() {
+      // Don't show if already submitted in this session
+      if (sessionStorage.getItem("project_enquiry_submitted") === "1") {
+        return;
+      }
+      // Update dynamic project name in the popup
+      const nameEl = document.getElementById("popupProjectName");
+      if (nameEl && currentProperty) {
+        nameEl.textContent = currentProperty.name || "this property";
+      }
+      openProjectPopupModal();
     }
 
-    function closeFloorUnlockModal() {
-      document.getElementById("floorUnlockModal").style.display = "none";
+    function openProjectPopupModal() {
+      document.getElementById("projectPopupModal").style.display = "flex";
+      document.getElementById("popupError").textContent = "";
+    }
+
+    function closeProjectPopupModal() {
+      document.getElementById("projectPopupModal").style.display = "none";
+    }
+
+    function submitProjectPopup(event) {
+      event.preventDefault();
+
+      const nameEl = document.getElementById("popupName");
+      const phoneEl = document.getElementById("popupPhone");
+      const msgEl = document.getElementById("popupMessage");
+      const errorEl = document.getElementById("popupError");
+      const submitBtn = document.getElementById("popupSubmitBtn");
+
+      const name = nameEl.value.trim();
+      const phone = phoneEl.value.trim();
+      const message = msgEl.value.trim();
+
+      if (!name || !phone) {
+        errorEl.textContent = "Please enter your name and mobile number.";
+        return;
+      }
+      if (!isValidPhone(phone)) {
+        errorEl.textContent = "Please enter a valid mobile number.";
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+      errorEl.textContent = "";
+
+      const areaMeta = getAreaMeta(currentProperty);
+      const isFloorPlanClick = !!pendingFloorPlanSrc;
+      const source = isFloorPlanClick ? "floorplan_unlock" : "project_popup_enquiry";
+      const leadMessage = isFloorPlanClick
+        ? (message ? `Floor Plan Click - Message: ${message}` : "Clicked Floor Plan to Unlock")
+        : message;
+
+      const leadPayload = {
+        source: source,
+        name,
+        phone: normalizePhone(phone),
+        property: {
+          id: currentProperty.id || "-",
+          name: currentProperty.name || "-",
+          type: currentProperty.type || "-",
+          size: currentProperty.size || "-",
+          areaLabel: areaMeta.label,
+          areaValue: areaMeta.value || "-",
+          location: currentProperty.location || "-"
+        },
+        ownerWhatsApp: FLOORPLAN_LEAD_WHATSAPP,
+        submittedAt: new Date().toISOString(),
+        message: leadMessage
+      };
+
+      sendFloorPlanLeadToOwner(leadPayload).finally(() => {
+        // Record submission to mute future popup displays in this session
+        sessionStorage.setItem("project_enquiry_submitted", "1");
+
+        // Unlock all floor plans for this property
+        floorPlanUnlocked = true;
+        unlockFloorPlan(currentProperty.id);
+        markFloorPlansUnlockedInUI();
+
+        // UI success indication
+        submitBtn.textContent = "Thank You! ✓";
+        submitBtn.style.background = "#2e5a4a"; // Green feedback
+        submitBtn.style.borderColor = "#2e5a4a";
+
+        // Small delay for smooth feedback, then close popup and open lightbox if needed
+        setTimeout(() => {
+          closeProjectPopupModal();
+
+          if (isFloorPlanClick && pendingFloorPlanSrc) {
+            openLightbox(pendingFloorPlanSrc);
+            pendingFloorPlanSrc = "";
+          }
+        }, 1500);
+      });
     }
 
     function markFloorPlansUnlockedInUI() {
@@ -530,61 +632,6 @@ ${site.floorPlans ? `
         .catch(() => false);
     }
 
-    function submitFloorPlanLead() {
-      const nameEl = document.getElementById("floorLeadName");
-      const phoneEl = document.getElementById("floorLeadPhone");
-      const errorEl = document.getElementById("floorLeadError");
-      const submitBtn = document.getElementById("floorLeadSubmitBtn");
-      const name = nameEl.value.trim();
-      const phone = phoneEl.value.trim();
-
-      if (!name || !phone) {
-        errorEl.textContent = "Please enter your name and mobile number.";
-        return;
-      }
-      if (!isValidPhone(phone)) {
-        errorEl.textContent = "Please enter a valid mobile number.";
-        return;
-      }
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Submitting...";
-      errorEl.textContent = "";
-
-      const areaMeta = getAreaMeta(currentProperty);
-      const leadPayload = {
-        source: "floorplan_unlock",
-        name,
-        phone: normalizePhone(phone),
-        property: {
-          id: currentProperty.id || "-",
-          name: currentProperty.name || "-",
-          type: currentProperty.type || "-",
-          size: currentProperty.size || "-",
-          areaLabel: areaMeta.label,
-          areaValue: areaMeta.value || "-",
-          location: currentProperty.location || "-"
-        },
-        ownerWhatsApp: FLOORPLAN_LEAD_WHATSAPP,
-        submittedAt: new Date().toISOString()
-      };
-
-      sendFloorPlanLeadToOwner(leadPayload).finally(() => {
-        floorPlanUnlocked = true;
-        unlockFloorPlan(currentProperty.id);
-        markFloorPlansUnlockedInUI();
-        closeFloorUnlockModal();
-        nameEl.value = "";
-        phoneEl.value = "";
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Submit & View";
-
-        if (pendingFloorPlanSrc) {
-          openLightbox(pendingFloorPlanSrc);
-          pendingFloorPlanSrc = "";
-        }
-      });
-    }
 
     /* Sticky enquiry */
     function openStickyEnquiry() {
@@ -660,6 +707,7 @@ ${site.floorPlans ? `
       if (event.key !== "Escape") return;
       closeFloorUnlockModal();
       closeSoldOutModal();
+      closeProjectPopupModal();
     });
   </script>
 

@@ -18,7 +18,7 @@ function renderProjects(list) {
       return `
         <article class="project-card">
           <a href="site.html?id=${project.id}" class="project-card-img-link">
-            <img src="${project.image}" alt="${project.name}">
+            <img src="${project.image}" alt="${project.name}" loading="lazy" decoding="async">
           </a>
           <div class="project-card-body">
             <div class="project-title">

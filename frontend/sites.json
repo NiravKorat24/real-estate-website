@@ -1,106 +1,92 @@
 [
-
-
-{
-  "id": 6,
-  "name": "Silvassa Heaven",
-  "size": "2 BHK",
-  "type" :"Residential",
-  "areaSqFt": "1240",
-  "areaSqM": "115.19",
-  "status": "ongoing",
-  "location": "Outer Ring Road, Mota Varachha",
-  "address":"Silvassa Heaven,Gopin Gam Road, near the Abrama-Valak Bridge, Outer Ring Road, Mota Varachha, Surat",
-"amenities": [
-"Two-level basement park  ing",
-"Modern elevators",
-"Continuous water supply",
-"Generator backup",
-"Secure gated campus"
-],
-
-"highlights": [
-"Premium 2 BHK residences",
-"Three stylish residential towers",
-"Smart and functional design",
-"Safe family-friendly environment",
-"Strong future appreciation"
-],
-
-"connectivity": [
-"outer Ring Road location",
-"Quick access to highways",
-"Near schools, malls and hospitals",
-"Well-connected public transport"
-],
-  "floorPlans": [
-    "assets/silvassa-heaven-layout.jpeg",
-    "assets/silvassa-heaven-floorplan.jpeg"
-
-  ],
-
-
-"mapEmbed": "https://www.google.com/maps?q=Silvassa+Heaven,+surat&output=embed",
-"gallery": [
-  "assets/Silvassa_heaven004.jpg.jpeg",
-  "assets/Silvassa_heaven002b.jpg.jpeg",
+  {
+    "id": 6,
+    "name": "Silvassa Heaven",
+    "size": "2 BHK",
+    "type": "Residential",
+    "areaSqFt": "1240",
+    "areaSqM": "115.19",
+    "status": "ongoing",
+    "location": "Outer Ring Road, Mota Varachha",
+    "address": "Silvassa Heaven,Gopin Gam Road, near the Abrama-Valak Bridge, Outer Ring Road, Mota Varachha, Surat",
+    "amenities": [
+      "Modern elevators",
+      "Continuous water supply",
+      "Generator backup",
+      "Secure gated campus",
+      "Children play area",
+      "Double basement parking"
+    ],
+    "highlights": [
+      "Premium 2 BHK residences",
+      "Three stylish residential towers",
+      "Smart and functional design",
+      "Safe family-friendly environment",
+      "Strong future appreciation"
+    ],
+    "connectivity": [
+      "outer Ring Road location",
+      "Quick access to highways",
+      "Near schools, malls and hospitals",
+      "Well-connected public transport"
+    ],
+    "floorPlans": [
+      "assets/silvassa-heaven-layout.jpeg",
+      "assets/silvassa-heaven-floorplan.jpeg"
+    ],
+    "mapEmbed": "https://www.google.com/maps?q=Silvassa+Heaven,+surat&output=embed",
+    "gallery": [
+      "assets/Silvassa_heaven004.jpg.jpeg",
+      "assets/Silvassa_heaven002b.jpg.jpeg",
       "assets/Silvassa_heaven012a.jpg.jpeg",
-         "assets/Silvassa_heven001C.jpg.jpeg",
-                "assets/Silvassa_heaven008A.jpg.jpeg",
-                          "assets/Silvassa_heaven009A.jpg.jpeg",
-                                      "assets/Silvassa_heaven010.jpg.jpeg",
-                                                  "assets/Silvassa_heaven011a.jpg.jpeg"
-
-
-
-],
-"description": [
-  "▸ત્રણ આકર્ષક ટાવર સાથેનું પ્રીમિયમ 2 BHK રહેણાંક પ્રોજેક્ટ",
-  "▸રિંગ રોડ પર સ્થિત પ્રાઇમ લોકેશન",
-  "▸ડબલ બેસમેન્ટ પાર્કિંગ સાથે સુવિધાસભર કેમ્પસ",
-  "▸સ્માર્ટ અને હવામાં ભરપૂર લેઆઉટ પ્લાનિંગ",
-  "▸24/7 પાણી અને વિશ્વસનીય વીજ પુરવઠો",
-  "▸લિફ્ટ અને સુરક્ષા વ્યવસ્થા સાથે ગેટેડ કમ્યુનિટી",
-  "▸વિસ્તૃત આંતરિક રોડ અને સુવ્યવસ્થિત ઇન્ફ્રાસ્ટ્રક્ચર",
-  "▸શાળા, હોસ્પિટલ અને માર્કેટની નજીક સુવિધાજનક સ્થાન",
-  "▸પરિવાર માટે સુરક્ષિત અને શાંતિપૂર્ણ વાતાવરણ",
-  "▸લાંબા ગાળાના રોકાણ માટે ઉત્તમ તક"
-] ,
-   "image": "assets/Silvassa_heven001C.jpg.jpeg"
-
-
+      "assets/Silvassa_heven001C.jpg.jpeg",
+      "assets/Silvassa_heaven008A.jpg.jpeg",
+      "assets/Silvassa_heaven009A.jpg.jpeg",
+      "assets/Silvassa_heaven010.jpg.jpeg",
+      "assets/Silvassa_heaven011a.jpg.jpeg"
+    ],
+    "description": [
+      "▸ત્રણ આકર્ષક ટાવર સાથેનું પ્રીમિયમ 2 BHK રહેણાંક પ્રોજેક્ટ",
+      "▸રિંગ રોડ પર સ્થિત પ્રાઇમ લોકેશન",
+      "▸ડબલ બેસમેન્ટ પાર્કિંગ સાથે સુવિધાસભર કેમ્પસ",
+      "▸સ્માર્ટ અને હવામાં ભરપૂર લેઆઉટ પ્લાનિંગ",
+      "▸24/7 પાણી અને વિશ્વસનીય વીજ પુરવઠો",
+      "▸લિફ્ટ અને સુરક્ષા વ્યવસ્થા સાથે ગેટેડ કમ્યુનિટી",
+      "▸વિસ્તૃત આંતરિક રોડ અને સુવ્યવસ્થિત ઇન્ફ્રાસ્ટ્રક્ચર",
+      "▸શાળા, હોસ્પિટલ અને માર્કેટની નજીક સુવિધાજનક સ્થાન",
+      "▸પરિવાર માટે સુરક્ષિત અને શાંતિપૂર્ણ વાતાવરણ",
+      "▸લાંબા ગાળાના રોકાણ માટે ઉત્તમ તક"
+    ],
+    "image": "assets/Silvassa_heven001C.jpg.jpeg"
   },
   {
     "id": 7,
     "name": "Silvassa Sunlight",
-    "type" : "Residential",
+    "type": "Residential",
     "size": "3 BHK",
     "areaSqFt": "1780",
     "areaSqM": "165.36",
     "status": "ongoing",
     "location": "Abrama Valak Bridge, Outer Ring Road",
-    "address" : "Silvassa Sunlight, Gopin Gam Road, Near Abrama Valak Bridge, Outer Ring Road, Mota Varachha, Surat",
-    
-  "amenities": [
-  "Grand entry gate",
-  "Security cabin",
-  "24/7 water supply",
-  "CCTV system",
-  "Reception & waiting area",
-  "Children play area",
-  "Landscaped garden",
-  "Multipurpose garden",
-  "Double basement parking",
-  "Power backup"
-  ]
-  ,
-        "highlights": [
+    "address": "Silvassa Sunlight, Gopin Gam Road, Near Abrama Valak Bridge, Outer Ring Road, Mota Varachha, Surat",
+    "amenities": [
+      "Grand entry gate",
+      "Security cabin",
+      "24/7 water supply",
+      "CCTV system",
+      "Reception & waiting area",
+      "Children play area",
+      "Landscaped garden",
+      "Multipurpose garden",
+      "Double basement parking",
+      "Power backup"
+    ],
+    "highlights": [
       "Prime location",
       "Clear title property",
       "Elite lifestyle living",
       "Good investment potential"
     ],
-  
     "connectivity": [
       "Near main road",
       "Prime location",
@@ -108,412 +94,316 @@
       "main attraction whole city",
       "Public transport nearby"
     ],
-  
     "floorPlans": [
-            "assets/silvassa-sunlight-floorplan.jpeg",
-            "assets/silvassa-sunlight-floorplan-A.jpeg",
-           "assets/silvassa-sunlight-floorplan-B.jpeg",
-           "assets/silvassa-sunlight-layout.jpeg"
-  
+      "assets/silvassa-sunlight-floorplan.jpeg",
+      "assets/silvassa-sunlight-floorplan-A.jpeg",
+      "assets/silvassa-sunlight-floorplan-B.jpeg",
+      "assets/silvassa-sunlight-layout.jpeg"
     ],
-  
-  
-  "mapEmbed": "https://www.google.com/maps?q=Silvassa+Sunlight,+surat&output=embed",
-  "gallery": [
-    "assets/silvassa-sunlight-front.jpeg",
-    "assets/silvassa-sunlight-main.jpeg"
-  ],
-  "description": [
-  "▸લક્ઝરી 3 BHK નિવાસ માટે રચાયેલ ટ્વિન ટાવર પ્રોજેક્ટ",
-  "▸શહેરના વિકસતા વિસ્તારમાં સ્થિત પ્રાઇમ લોકેશન",
-  "▸બે ભવ્ય અને આધુનિક આર્કિટેક્ચર સાથે આકર્ષક બિલ્ડિંગ",
-  "▸વિશાળ રૂમ્સ અને સ્માર્ટ લેઆઉટ સાથે આરામદાયક જીવન",
-  "▸પ્રાકૃતિક પ્રકાશ અને ઉત્તમ વેન્ટિલેશન માટે ખાસ આયોજન",
-  "▸પ્રીમિયમ ક્વોલિટી મટીરિયલ અને એલેગન્ટ ઇન્ટિરિયર ફિનિશિંગ",
-  "▸24/7 પાણી અને વિશ્વસનીય વીજ પુરવઠો",
-  "▸CCTV સાથે સુરક્ષિત ગેટેડ કેમ્પસ",
-  "▸બેસમેન્ટ પાર્કિંગ અને હાઇ-સ્પીડ લિફ્ટ સુવિધા",
-  "▸શાળા, હોસ્પિટલ અને માર્કેટની નજીક સુવિધાજનક સ્થાન",
-  "▸પરિવાર માટે શાંતિપૂર્ણ અને સુરક્ષિત વાતાવરણ",
-  "▸લાંબા ગાળાના રોકાણ માટે ઉત્તમ તક"
-  ],
-    "image":      "assets/silvassa-sunlight-main.jpeg"
-  
-  
-  
-  
-  
+    "mapEmbed": "https://www.google.com/maps?q=Silvassa+Sunlight,+surat&output=embed",
+    "gallery": [
+      "assets/silvassa-sunlight-front.jpeg",
+      "assets/silvassa-sunlight-main.jpeg"
+    ],
+    "description": [
+      "▸લક્ઝરી 3 BHK નિવાસ માટે રચાયેલ ટ્વિન ટાવર પ્રોજેક્ટ",
+      "▸શહેરના વિકસતા વિસ્તારમાં સ્થિત પ્રાઇમ લોકેશન",
+      "▸બે ભવ્ય અને આધુનિક આર્કિટેક્ચર સાથે આકર્ષક બિલ્ડિંગ",
+      "▸વિશાળ રૂમ્સ અને સ્માર્ટ લેઆઉટ સાથે આરામદાયક જીવન",
+      "▸પ્રાકૃતિક પ્રકાશ અને ઉત્તમ વેન્ટિલેશન માટે ખાસ આયોજન",
+      "▸પ્રીમિયમ ક્વોલિટી મટીરિયલ અને એલેગન્ટ ઇન્ટિરિયર ફિનિશિંગ",
+      "▸24/7 પાણી અને વિશ્વસનીય વીજ પુરવઠો",
+      "▸CCTV સાથે સુરક્ષિત ગેટેડ કેમ્પસ",
+      "▸બેસમેન્ટ પાર્કિંગ અને હાઇ-સ્પીડ લિફ્ટ સુવિધા",
+      "▸શાળા, હોસ્પિટલ અને માર્કેટની નજીક સુવિધાજનક સ્થાન",
+      "▸પરિવાર માટે શાંતિપૂર્ણ અને સુરક્ષિત વાતાવરણ",
+      "▸લાંબા ગાળાના રોકાણ માટે ઉત્તમ તક"
+    ],
+    "image": "assets/silvassa-sunlight-main.jpeg"
   },
-
-  
   {
     "id": 4,
     "name": "Silvassa Paradise",
-    "size": "3 BHK",
+    "type": "Residential",
     "areaSqFt": "1725 - 1835",
     "areaSqM": "160.25 - 170.47",
     "status": "completed",
+    "address": "Silvassa Paradise,near Ayodhya trade centre,Outer Ring Road,Gopin gam, Mota Varachha, Surat",
+    "soldout": "yes",
     "location": "Mota Varachha , Surat",
-    "address" :"",
-  
-  "amenities": [
-  "2 Basement parking",
-  "Lift facility",
-  "Power backup",
-  "Landscap Garden",
-  "Security system",
-  "24/7 water supply"
-  ],
-  
-  "highlights": [
-  "Premium 3 BHK apartments",
-  "Twin building project",
-  "Spacious layout",
-  "Clear title property",
-  "Good investment potential"
-  ],
-  
-  "connectivity": [
-  "Prime location",
-  "Near main road",
-  "Close to schools and hospitals",
-  "Public transport nearby"
-  ],
-  
-  
+    "size": "3 BHK",
+    "amenities": [
+      "2 Basement parking",
+      "Lift facility",
+      "Power backup",
+      "Landscap Garden",
+      "Security system",
+      "24/7 water supply"
+    ],
+    "highlights": [
+      "Premium 3 BHK apartments",
+      "Twin building project",
+      "Spacious layout",
+      "Clear title property",
+      "Good investment potential"
+    ],
+    "connectivity": [
+      "Prime location",
+      "Near main road",
+      "Close to schools and hospitals",
+      "Public transport nearby"
+    ],
     "floorPlans": [
       "assets/silvassa-hill-floorplan1.jpg"
     ],
-  
-  
-  "mapEmbed": "https://www.google.com/maps?q=Silvassa+paradise,+surat&output=embed",
-  "gallery": [
-  
-  ],
-   "description": [
-    "▸એલિટ 3 BHK નિવાસ માટે વિશેષ રીતે ડિઝાઇન કરાયેલ ટ્વિન ટાવર પ્રોજેક્ટ",
-    "▸બે ભવ્ય અને આકર્ષક બિલ્ડિંગ સાથે આધુનિક આર્કિટેક્ચર",
-    "▸વિશાળ લિવિંગ અને ડાઇનિંગ સ્પેસ સાથે ઉત્તમ વેન્ટિલેશન",
-    "▸પ્રત્યેક ફ્લેટમાં પ્રાકૃતિક પ્રકાશ અને ખુલ્લી હવા માટે સ્માર્ટ પ્લાનિંગ",
-    "▸હાઇ-ક્વોલિટી મટીરિયલ અને પ્રીમિયમ ઇન્ટિરિયર ફિનિશિંગ",
-    "▸24/7 પાણી અને વિશ્વસનીય વીજ પુરવઠો",
-    "▸મલ્ટી-લેવલ સુરક્ષા વ્યવસ્થા સાથે CCTV મોનિટરિંગ",
-    "▸બેસમેન્ટ અને ઓપન પાર્કિંગની સુવિધા",
-    "▸લિફ્ટ અને કોમન એરિયામાં આકર્ષક ડિઝાઇન",
-    "▸શાળા, હોસ્પિટલ, મોલ અને ટ્રાન્સપોર્ટ હબની નજીક પ્રાઇમ લોકેશન",
-    "▸શાંતિપૂર્ણ અને પરિવાર માટે અનુકૂળ વાતાવરણ",
-    "▸લાંબા ગાળાના રોકાણ અને ઊંચા રિટર્ન માટે ઉત્તમ તક"
-  ],
-    "image": ""
+    "mapEmbed": "https://www.google.com/maps?q=Silvassa+paradise,+surat&output=embed",
+    "gallery": [
+      "assets/Silvassa_Paradise_8.jpeg",
+      "assets/Silvassa_Paradise.jpeg",
+      "assets/Silvassa_Paradise_1.jpeg",
+      "assets/Silvassa_Paradise_2.jpeg",
+      "assets/Silvassa_Paradise_3.jpeg",
+      "assets/Silvassa_Paradise_4.jpeg",
+      "assets/Silvassa_Paradise_5.jpeg",
+      "assets/Silvassa_Paradise_6.jpeg",
+      "assets/Silvassa_Paradise_7.jpeg",
+      "assets/Silvassa_Paradise_9.jpeg"
+    ],
+    "description": [
+      "▸એલિટ 3 BHK નિવાસ માટે વિશેષ રીતે ડિઝાઇન કરાયેલ ટ્વિન ટાવર પ્રોજેક્ટ",
+      "▸બે ભવ્ય અને આકર્ષક બિલ્ડિંગ સાથે આધુનિક આર્કિટેક્ચર",
+      "▸વિશાળ લિવિંગ અને ડાઇનિંગ સ્પેસ સાથે ઉત્તમ વેન્ટિલેશન",
+      "▸પ્રત્યેક ફ્લેટમાં પ્રાકૃતિક પ્રકાશ અને ખુલ્લી હવા માટે સ્માર્ટ પ્લાનિંગ",
+      "▸હાઇ-ક્વોલિટી મટીરિયલ અને પ્રીમિયમ ઇન્ટિરિયર ફિનિશિંગ",
+      "▸24/7 પાણી અને વિશ્વસનીય વીજ પુરવઠો",
+      "▸મલ્ટી-લેવલ સુરક્ષા વ્યવસ્થા સાથે CCTV મોનિટરિંગ",
+      "▸બેસમેન્ટ અને ઓપન પાર્કિંગની સુવિધા",
+      "▸લિફ્ટ અને કોમન એરિયામાં આકર્ષક ડિઝાઇન",
+      "▸શાળા, હોસ્પિટલ, મોલ અને ટ્રાન્સપોર્ટ હબની નજીક પ્રાઇમ લોકેશન",
+      "▸શાંતિપૂર્ણ અને પરિવાર માટે અનુકૂળ વાતાવરણ",
+      "▸લાંબા ગાળાના રોકાણ અને ઊંચા રિટર્ન માટે ઉત્તમ તક"
+    ],
+    "image": "assets/Silvassa_Paradise_9.jpeg"
   },
-
-
-
   {
     "id": 5,
     "name": "Silvassa Bunglows",
-    "size": " 924 & 1008 sq ft",
-    "type" :"Residential",
+    "size": " 924 & 1008 var",
+    "type": "Residential",
     "plotSize": "22*42 & 24*42",
     "areaSqFt": "924 & 1008",
     "areaSqM": "85.84 & 93.64",
     "status": "completed",
-    "location": "",
-    "address" : "",
-  
-  "amenities": [
-  "Gated community",
-  "24/7 water supply",
-  "Internal roads",
-  "Street lights",
-  "Parking space"
-  ],
-  
-  "highlights": [
-  "Prime location",
-  "68 Family society",
-  "Clear title property",
-  "Good investment option",
-  "Peaceful environment"
-  ],
-  
-  "connectivity": [
-  "Near main road",
-  "Close to schools and hospitals",
-  "Public transport available"
-  ],
-  
+    "soldout": "yes",
+    "location": "Mota Varachha, Surat",
+    "address": "Silvassa Bunglows,Near Aspire Public school,Mota Varachha, Surat, Gujarat ",
+    "amenities": [
+      "Gated community",
+      "24/7 water supply",
+      "Children play area",
+      "Internal roads",
+      "Street lights",
+      "CCTV security",
+      "Parking space"
+    ],
+    "highlights": [
+      "Prime location",
+      "68 Family society",
+      "Clear title property",
+      "Good investment option",
+      "Peaceful environment"
+    ],
+    "connectivity": [
+      "Near main road",
+      "Close to schools and hospitals",
+      "Public transport available"
+    ],
     "floorPlans": [
       "assets/silvassa-hill-floorplan1.jpg"
     ],
-  
-  
-  "mapEmbed": "https://www.google.com/maps?q=Silvassa+Bunglows,+surat&output=embed",
-  "gallery": [
-  ],
-   "description": [
-    "▸ વિશાળ અને સુવ્યવસ્થિત રેસિડેન્શિયલ પ્લોટ્સ સાથેનું પ્રીમિયમ પ્લોટિંગ પ્રોજેક્ટ",
-    "▸ તમારા સપનાનું ઘર તમારા ડિઝાઇન મુજબ બનાવવા માટે સંપૂર્ણ સ્વતંત્રતા",
-    "▸ ગેટેડ કમ્યુનિટી સાથે સુરક્ષિત અને આયોજનબદ્ધ લેઆઉટ",
-    "▸ વિસ્તૃત આંતરિક રોડ અને સુગમ એન્ટ્રી-એક્સિટ સુવિધા",
-    "▸ 24/7 પાણી અને વીજળી માટે જરૂરી ઇન્ફ્રાસ્ટ્રક્ચર ઉપલબ્ધ",
-    "▸ સુવ્યવસ્થિત ડ્રેનેજ અને સ્ટ્રીટ લાઇટિંગ સિસ્ટમ",
-    "▸ શાંત, હરિયાળું અને પ્રદૂષણમુક્ત વાતાવરણ",
-    "▸ બાળકો માટે ઓપન સ્પેસ અને ગાર્ડન વિસ્તાર",
-    "▸ શાળા, હોસ્પિટલ, માર્કેટ અને ટ્રાન્સપોર્ટ હબની નજીક પ્રાઇમ લોકેશન",
-    "▸ ભવિષ્યમાં ઝડપી વિકાસ માટે ઉત્તમ રોડ કનેક્ટિવિટી",
-    "▸ રોકાણ માટે ઊંચી વૃદ્ધિ સંભાવના અને મજબૂત રિટર્ન",
-    "▸ પરિવાર માટે સુરક્ષિત અને લાંબા ગાળાના નિવાસ માટે આદર્શ પસંદગી"
-  ],
+    "mapEmbed": "https://www.google.com/maps?q=Silvassa+Bunglows,+surat&output=embed",
+    "gallery": [],
+    "description": [
+      "▸ વિશાળ અને સુવ્યવસ્થિત રેસિડેન્શિયલ પ્લોટ્સ સાથેનું પ્રીમિયમ પ્લોટિંગ પ્રોજેક્ટ",
+      "▸ તમારા સપનાનું ઘર તમારા ડિઝાઇન મુજબ બનાવવા માટે સંપૂર્ણ સ્વતંત્રતા",
+      "▸ ગેટેડ કમ્યુનિટી સાથે સુરક્ષિત અને આયોજનબદ્ધ લેઆઉટ",
+      "▸ વિસ્તૃત આંતરિક રોડ અને સુગમ એન્ટ્રી-એક્સિટ સુવિધા",
+      "▸ 24/7 પાણી અને વીજળી માટે જરૂરી ઇન્ફ્રાસ્ટ્રક્ચર ઉપલબ્ધ",
+      "▸ સુવ્યવસ્થિત ડ્રેનેજ અને સ્ટ્રીટ લાઇટિંગ સિસ્ટમ",
+      "▸ શાંત, હરિયાળું અને પ્રદૂષણમુક્ત વાતાવરણ",
+      "▸ બાળકો માટે ઓપન સ્પેસ અને ગાર્ડન વિસ્તાર",
+      "▸ શાળા, હોસ્પિટલ, માર્કેટ અને ટ્રાન્સપોર્ટ હબની નજીક પ્રાઇમ લોકેશન",
+      "▸ ભવિષ્યમાં ઝડપી વિકાસ માટે ઉત્તમ રોડ કનેક્ટિવિટી",
+      "▸ રોકાણ માટે ઊંચી વૃદ્ધિ સંભાવના અને મજબૂત રિટર્ન",
+      "▸ પરિવાર માટે સુરક્ષિત અને લાંબા ગાળાના નિવાસ માટે આદર્શ પસંદગી"
+    ],
     "image": ""
   },
-  
-  
-  
-  
-  
-  
   {
     "id": 8,
     "name": "Silvassa Meritto",
     "size": "3 BHK",
-    "type" :"Residential",
+    "type": "Residential",
     "areaSqFt": "1750 & 1860",
     "areaSqM": "162.58 & 172.79",
     "status": "ongoing",
     "location": "kosad , surat",
-    "address":"BL-207, Silvassa Meritto, Kosad, Surat, Gujarat, 394107",
-  
-  "amenities": [
-  "High-speed lift",
-  "Basement parking",
-  "Landscap Garden",
-  "24/7 water & power backup",
-  "CCTV security",
-  "Grand entrance lobby"
-  ],
-  
-  "highlights": [
-  "Premium luxury residences",
-  "Peaceful environment",
-  "Prime location",
-  "High-end construction quality",
-  "Elite lifestyle living"
-  ],
-  
-  "connectivity": [
-  "Excellent road connectivity",
-  "Close to top schools & hospitals",
-  "Public transport nearby",
-  "Near shopping & city hubs"
-  ],
-  
-  
-  "floorPlans": [
+    "address": "BL-207, Silvassa Meritto, Kosad, Surat, Gujarat, 394107",
+    "amenities": [
+      "High-speed lift",
+      "Basement parking",
+      "Landscap Garden",
+      "24/7 water & power backup",
+      "CCTV security",
+      "Grand entrance lobby"
+    ],
+    "highlights": [
+      "Premium luxury residences",
+      "Peaceful environment",
+      "Prime location",
+      "High-end construction quality",
+      "Elite lifestyle living"
+    ],
+    "connectivity": [
+      "Excellent road connectivity",
+      "Close to top schools & hospitals",
+      "Public transport nearby",
+      "Near shopping & city hubs"
+    ],
+    "floorPlans": [
       "assets/silvassa-hill-floorplan1.jpg"
     ],
-  
-  
-  "mapEmbed": "https://www.google.com/maps?q=Silvassa+Meritto,+surat&output=embed",
-  "gallery": [
-    "assets/merrito-5.webp",
-    "assets/merrito-6.webp",
-    "assets/merrito-4.webp",
-    "assets/merrito-7.webp",
-    "assets/merrito-3.webp",
-    "assets/merrito-1.webp",
-    "assets/merrito-2.webp"
-  
-  ],
-  
-  "description": [
-  "▸લક્ઝરી 3 BHK નિવાસ માટે રચાયેલ ત્રણ ટાવર પ્રોજેક્ટ",
-  "▸શહેરના પ્રાઇમ અને વિકાસશીલ વિસ્તારમાં સ્થિત",
-  "▸ત્રણ ભવ્ય અને આધુનિક આર્કિટેક્ચર સાથે આકર્ષક ટાવર્સ",
-  "▸વિશાળ રૂમ્સ અને સ્માર્ટ લેઆઉટ સાથે આરામદાયક જીવનશૈલી",
-  "▸પ્રાકૃતિક પ્રકાશ અને ઉત્તમ વેન્ટિલેશન માટે ખાસ આયોજન",
-  "▸પ્રીમિયમ ક્વોલિટી મટીરિયલ અને એલેગન્ટ ઇન્ટિરિયર ફિનિશિંગ",
-  "▸ડબલ બેસમેન્ટ પાર્કિંગ સાથે સુવિધાસભર કેમ્પસ",
-  "▸24/7 પાણી અને વિશ્વસનીય વીજ પુરવઠો",
-  "▸CCTV સાથે સુરક્ષિત ગેટેડ કમ્યુનિટી",
-  "▸શાળા, હોસ્પિટલ અને માર્કેટની નજીક સુવિધાજનક સ્થાન",
-  "▸પરિવાર માટે શાંતિપૂર્ણ અને સુરક્ષિત વાતાવરણ",
-  "▸લાંબા ગાળાના રોકાણ માટે ઉત્તમ વિકલ્પ"
-  ]
-  ,
+    "mapEmbed": "https://www.google.com/maps?q=Silvassa+Meritto,+surat&output=embed",
+    "gallery": [
+      "assets/merrito-5.webp",
+      "assets/merrito-6.webp",
+      "assets/merrito-4.webp",
+      "assets/merrito-7.webp",
+      "assets/merrito-3.webp",
+      "assets/merrito-1.jpg",
+      "assets/merrito-2.webp"
+    ],
+    "description": [
+      "▸લક્ઝરી 3 BHK નિવાસ માટે રચાયેલ ત્રણ ટાવર પ્રોજેક્ટ",
+      "▸શહેરના પ્રાઇમ અને વિકાસશીલ વિસ્તારમાં સ્થિત",
+      "▸ત્રણ ભવ્ય અને આધુનિક આર્કિટેક્ચર સાથે આકર્ષક ટાવર્સ",
+      "▸વિશાળ રૂમ્સ અને સ્માર્ટ લેઆઉટ સાથે આરામદાયક જીવનશૈલી",
+      "▸પ્રાકૃતિક પ્રકાશ અને ઉત્તમ વેન્ટિલેશન માટે ખાસ આયોજન",
+      "▸પ્રીમિયમ ક્વોલિટી મટીરિયલ અને એલેગન્ટ ઇન્ટિરિયર ફિનિશિંગ",
+      "▸ડબલ બેસમેન્ટ પાર્કિંગ સાથે સુવિધાસભર કેમ્પસ",
+      "▸24/7 પાણી અને વિશ્વસનીય વીજ પુરવઠો",
+      "▸CCTV સાથે સુરક્ષિત ગેટેડ કમ્યુનિટી",
+      "▸શાળા, હોસ્પિટલ અને માર્કેટની નજીક સુવિધાજનક સ્થાન",
+      "▸પરિવાર માટે શાંતિપૂર્ણ અને સુરક્ષિત વાતાવરણ",
+      "▸લાંબા ગાળાના રોકાણ માટે ઉત્તમ વિકલ્પ"
+    ],
     "image": "assets/merrito-6.webp"
   },
   {
     "id": 9,
     "name": "Silvassa Embro Park 1",
-    "type" : "commercial",
+    "type": "commercial",
     "size": " sq ft",
     "status": "ongoing",
-    "location": "",
+    "location": "Saniya Hemad,surat",
+    "address": "6W35+9C, Saniya Hemad,surat",
     "amenities": [
-      "Lift Facility",
       "Power Backup",
       "Parking Area",
       "Security System"
     ],
-      "highlights": [
+    "highlights": [
       "16  open plots",
       "Prime location",
       "Clear title property",
       "Good investment potential"
     ],
-  
     "connectivity": [
       "Near main road",
       "main attraction whole city",
       "Public transport nearby"
     ],
-  
     "floorPlans": [
       "assets/SILVASSA EMBRO PARK-plan.jpg"
     ],
-  
-  
-  "mapEmbed": "https://www.google.com/maps?q=Silvassa+EmbroPark+1,+surat&output=embed",
-  "gallery": [
-  ],
-  "description": [
-  "▸એમ્બ્રોઇડરી અને ગાર્મેન્ટ ઉદ્યોગ માટે આધુનિક સુવિધાઓ સાથે વિકસિત ઇન્ડસ્ટ્રિયલ પાર્ક",
-  "▸24/7 વીજળી અને પાણીની વ્યવસ્થા",
-  "▸હાઇ-સીલિંગ વર્કસ્પેસ અને ઉત્તમ વેન્ટિલેશન વ્યવસ્થા",
-  "▸મોટા વાહનો માટે સરળ એન્ટ્રી-એક્સિટ સુવિધા",
-  "▸ઉદ્યોગ માટે સતત અને વિશ્વસનીય વીજ પુરવઠો",
-  "▸રૉ મટીરિયલ અને તૈયાર માલ માટે અલગ સ્ટોરેજ ઝોન",
-  "▸ફાયર સેફ્ટી સિસ્ટમ સાથે સુરક્ષિત ઇન્ફ્રાસ્ટ્રક્ચર",
-  "▸સુવ્યવસ્થિત આંતરિક રોડ અને ડ્રેનેજ સિસ્ટમ",
-  "▸બિઝનેસ એક્સપાન્શન માટે અનુકૂળ લેઆઉટ પ્લાનિંગ",
-  "▸કર્મચારીઓ માટે આરામદાયક સુવિધાઓ અને સગવડો",
-  "▸લાંબા ગાળાના ઔદ્યોગિક રોકાણ માટે વિશ્વસનીય વિકલ્પ"
-  ],
+    "mapEmbed": "https://www.google.com/maps?q=Silvassa+EmbroPark+1,+surat&output=embed",
+    "gallery": [],
+    "description": [
+      "▸એમ્બ્રોઇડરી અને ગાર્મેન્ટ ઉદ્યોગ માટે આધુનિક સુવિધાઓ સાથે વિકસિત ઇન્ડસ્ટ્રિયલ પાર્ક",
+      "▸24/7 વીજળી અને પાણીની વ્યવસ્થા",
+      "▸હાઇ-સીલિંગ વર્કસ્પેસ અને ઉત્તમ વેન્ટિલેશન વ્યવસ્થા",
+      "▸મોટા વાહનો માટે સરળ એન્ટ્રી-એક્સિટ સુવિધા",
+      "▸ઉદ્યોગ માટે સતત અને વિશ્વસનીય વીજ પુરવઠો",
+      "▸રૉ મટીરિયલ અને તૈયાર માલ માટે અલગ સ્ટોરેજ ઝોન",
+      "▸ફાયર સેફ્ટી સિસ્ટમ સાથે સુરક્ષિત ઇન્ફ્રાસ્ટ્રક્ચર",
+      "▸સુવ્યવસ્થિત આંતરિક રોડ અને ડ્રેનેજ સિસ્ટમ",
+      "▸બિઝનેસ એક્સપાન્શન માટે અનુકૂળ લેઆઉટ પ્લાનિંગ",
+      "▸કર્મચારીઓ માટે આરામદાયક સુવિધાઓ અને સગવડો",
+      "▸લાંબા ગાળાના ઔદ્યોગિક રોકાણ માટે વિશ્વસનીય વિકલ્પ"
+    ],
     "image": ""
-  }
-    ,
-  {
-    "id": 10,
-    "name": "Silvassa Embro Park 2",
-    "size": " ",
-    "areaSqFt": "1485",
-    "areaSqM": "137.96",
-    "status": "ongoing",
-    "location": "",
-    "address":"",
-    "amenities": [
-      "24/7 water supply",
-      "Power Backup",
-      "Street lights",
-      "Parking Area",
-      "Security System"
-    ],
-        "highlights": [
-        "16  open plots",
-      "Prime location",
-      "Clear title property",
-      "Good investment potential"
-    ],
-  
-    "connectivity": [
-      "Near main road",
-      "main attraction whole city",
-      "Public transport nearby"
-    ],
-  
-    "floorPlans": [
-      "assets/SILVASA  EMBRO  PARK - 2-plan.jpg"
-    ],
-  
-  
-  "mapEmbed": "https://www.google.com/maps?q=Silvassa+EmbroPark+2,+surat&output=embed",
-  "gallery": [
-  ],
-      "description": [
-    "▸એમ્બ્રોઇડરી અને ટેક્સટાઇલ ઉદ્યોગ માટે વિશેષ ડિઝાઇન કરાયેલ કોમર્શિયલ પાર્ક",
-    "▸વિસ્તૃત વર્કસ્પેસ અને મશીનરી માટે પૂરતી જગ્યા",
-    "▸ઉત્કૃષ્ટ રોડ કનેક્ટિવિટી અને ટ્રાન્સપોર્ટ સુવિધા",
-    "▸24/7 વીજળી અને પાણીની વ્યવસ્થા",
-    "▸લોડિંગ-અનલોડિંગ માટે વિશાળ વિસ્તાર",
-    "▸સુરક્ષિત ગેટેડ કેમ્પસ સાથે CCTV સર્વેલન્સ",
-    "▸સ્ટાફ માટે પાર્કિંગ અને સુવિધાજનક સુવિધાઓ",
-    "▸વ્યવસાય વૃદ્ધિ માટે આદર્શ સ્થાન"
-  ],
-    "image": ""
-  
-  
   },
-
   {
-  "id": 1,  
-  "name": "Silvassa Hill",
-  "size": "3 BHK",
-  "areaSqFt": "2045",
-  "areaSqM": "190.98",
-  "status": "completed",
-  "type": "Residential",
-   "soldout": "yes",
-  "location": "Mota Varachha , Surat",
-  "address": "Silavasa hill, Sarjan Rd, Mota Varachha, Surat, Gujarat 394101",
-
-"amenities": [
-  "Banquet hall for functions",
-  "Exclusive penthouses",
-  "High-speed lift",
-  "Power backup",
-  "24/7 water supply",
-  "Reserved parking",
-  "24/7 security"
-],  
-
-"highlights": [
-  "Luxury 3 BHK homes",
-  "Iconic single tower",
-  "Premium lifestyle",
-  "Panoramic penthouse views"
-],  
-
-"connectivity": [
-  "Prime location",
-  "Near main road",
-  "Close to schools and hospitals"
-],  
-
+    "id": 1,
+    "name": "Silvassa Hill",
+    "size": "3 BHK",
+    "areaSqFt": "2045",
+    "areaSqM": "190.98",
+    "status": "completed",
+    "type": "Residential",
+    "soldout": "yes",
+    "location": "Mota Varachha , Surat",
+    "address": "Silavasa hill, Sarjan Rd, Mota Varachha, Surat, Gujarat 394101",
+    "amenities": [
+      "Banquet hall for functions",
+      "Exclusive penthouses",
+      "High-speed lift",
+      "Power backup",
+      "24/7 water supply",
+      "Reserved parking",
+      "24/7 security"
+    ],
+    "highlights": [
+      "Luxury 3 BHK homes",
+      "Iconic single tower",
+      "Premium lifestyle",
+      "Panoramic penthouse views"
+    ],
+    "connectivity": [
+      "Prime location",
+      "Near main road",
+      "Close to schools and hospitals"
+    ],
     "floorPlans": [
       "assets/silvassa-hill-floorplan1.jpg"
-    ],  
-
-  "mapEmbed": "https://www.google.com/maps?q=SilvassaHill,+surat&output=embed",  
-  "gallery": [
-    "assets/Silvassa-hill-front.jpeg",
-    "https://is1-3.housingcdn.com/4f2250e8/a6338d641255b4e8dcdc270924806783/v0/large/shree_hari_silvassa_hill-mota_varachha-surat-shree_hari_buildcon.jpeg",
-    "https://www.a2zproperty.in/Gujarat/Surat/silvassa-hill/145813_const-720.jpg"
-  ],  
-
-  "description": [
-  "▸પ્રીમિયમ રહેણાંક પ્રોજેક્ટ, જે આધુનિક અને આરામદાયક જીવન માટે રચાયેલ છે",  
-  "▸ઉત્કૃષ્ટ રોડ કનેક્ટિવિટી અને આવશ્યક સુવિધાઓ સાથે વ્યૂહાત્મક સ્થાન પર આવેલ છે",
-  "▸વિચારપૂર્વક આયોજન કરાયેલ લેઆઉટ સાથેનું એક અનોખું આઇકોનિક બિલ્ડિંગ",
-  "▸પેનોરામિક શહેરના દૃશ્યો સાથે વિશેષ પેન્ટહાઉસ યુનિટ્સ ઉપલબ્ધ",
-  "▸24/7 પાણીની સુવિધા અને સમર્પિત પાર્કિંગ વ્યવસ્થા",
-  "▸શાંતિપૂર્ણ વાતાવરણ, પરિવાર માટે અને લાંબા ગાળાના રોકાણ માટે આદર્શ",
-  "▸ઉચ્ચ ગુણવત્તાવાળા નિર્માણ ધોરણો અને આકર્ષક બાહ્ય ડિઝાઇન",
-  "▸શાળા, હોસ્પિટલ, શોપિંગ સેન્ટર અને પરિવહન સુવિધાઓની નજીક સ્થિત."
-],  
-
-  "image": "assets/Silvassa-hill-front.jpeg"
-},  
-  
-{
+    ],
+    "mapEmbed": "https://www.google.com/maps?q=SilvassaHill,+surat&output=embed",
+    "gallery": [
+      "assets/Silvassa-hill-front.jpeg",
+      "https://is1-3.housingcdn.com/4f2250e8/a6338d641255b4e8dcdc270924806783/v0/large/shree_hari_silvassa_hill-mota_varachha-surat-shree_hari_buildcon.jpeg",
+      "https://www.a2zproperty.in/Gujarat/Surat/silvassa-hill/145813_const-720.jpg"
+    ],
+    "description": [
+      "▸પ્રીમિયમ રહેણાંક પ્રોજેક્ટ, જે આધુનિક અને આરામદાયક જીવન માટે રચાયેલ છે",
+      "▸ઉત્કૃષ્ટ રોડ કનેક્ટિવિટી અને આવશ્યક સુવિધાઓ સાથે વ્યૂહાત્મક સ્થાન પર આવેલ છે",
+      "▸વિચારપૂર્વક આયોજન કરાયેલ લેઆઉટ સાથેનું એક અનોખું આઇકોનિક બિલ્ડિંગ",
+      "▸પેનોરામિક શહેરના દૃશ્યો સાથે વિશેષ પેન્ટહાઉસ યુનિટ્સ ઉપલબ્ધ",
+      "▸24/7 પાણીની સુવિધા અને સમર્પિત પાર્કિંગ વ્યવસ્થા",
+      "▸શાંતિપૂર્ણ વાતાવરણ, પરિવાર માટે અને લાંબા ગાળાના રોકાણ માટે આદર્શ",
+      "▸ઉચ્ચ ગુણવત્તાવાળા નિર્માણ ધોરણો અને આકર્ષક બાહ્ય ડિઝાઇન",
+      "▸શાળા, હોસ્પિટલ, શોપિંગ સેન્ટર અને પરિવહન સુવિધાઓની નજીક સ્થિત."
+    ],
+    "image": "assets/Silvassa-hill-front.jpeg"
+  },
+  {
     "id": 2,
     "name": "Silvassa Twin Tower",
     "size": "2 BHK",
     "areaSqFt": "1112",
     "areaSqM": "103.3",
-     "soldout": "yes",
-      "type": "Residential with Shops",
-    "status": "completed",  
+    "soldout": "yes",
+    "type": "Residential with Shops",
+    "status": "completed",
     "location": "Mota Varachha , Surat",
     "address": "Silvassa Twin Tower ,Aspire Road, Nr. Sumeru Sky, Mota Varachha, Mota Varachha, Surat, Gujarat 394101",
     "amenities": [
@@ -525,104 +415,85 @@
       "Security System",
       "Senior Citizens Sitting",
       "Landscap Garden"
-    ],  
-"highlights": [  
-  "Modern 2 BHK apartments",
-  "Twin residential buildings",
-  "Shops within the same premises",
-  "Prime Ring Road location",
-  "Perfect for living and business convenience"
-],  
-
-"connectivity": [
-  "Near Ring Road for easy access",
-  "Close to daily need stores and markets",
-  "Schools and hospitals nearby",
-  "Good public transport connectivity"
-],  
-
+    ],
+    "highlights": [
+      "Modern 2 BHK apartments",
+      "Twin residential buildings",
+      "Shops within the same premises",
+      "Prime Ring Road location",
+      "Perfect for living and business convenience"
+    ],
+    "connectivity": [
+      "Near Ring Road for easy access",
+      "Close to daily need stores and markets",
+      "Schools and hospitals nearby",
+      "Good public transport connectivity"
+    ],
     "floorPlans": [
       "assets/silvassa_Twintower-plan1.jpeg",
       "assets/silvassa_Twintower-plan2.jpeg",
       "assets/silvassa_Twintower-plan3.jpeg"
-    ],  
-    
-    "gallery": [
-      
-  ],    
-
+    ],
+    "gallery": [],
     "mapEmbed": "https://www.google.com/maps?q=Silvassa+Twin+Tower,+surat&output=embed",
-
-  "description": [
-    "▸આધુનિક 2 BHK પ્રીમિયમ ફ્લેટ્સ સાથે આરામદાયક જીવનશૈલી",
-    "▸ગ્રાઉન્ડ ફ્લોર પર કોમર્શિયલ શોપ્સ સાથે રહેણાંક અને વ્યવસાયનું સંયોજન",
-    "▸વિશાળ અને હવામાં ભરપૂર લેઆઉટ સાથે સ્માર્ટ ડિઝાઇન",
-    "▸ઉત્કૃષ્ટ રોડ કનેક્ટિવિટી અને પ્રાઇમ લોકેશન",
-    "▸24/7 પાણીની સુવિધા અને સુરક્ષિત ગેટેડ કેમ્પસ",
-    "▸રહેવાસીઓ માટે સમર્પિત પાર્કિંગ સુવિધા",
-    "▸શાળા, હોસ્પિટલ અને માર્કેટની નજીક સ્થિત",
-    "▸રોકાણ અને રહેવા માટે એક ઉત્તમ તક"
-  ],  
-
-    "image":"assets/Silvassa-twin-tower-front.jpeg"
-},    
-
+    "description": [
+      "▸આધુનિક 2 BHK પ્રીમિયમ ફ્લેટ્સ સાથે આરામદાયક જીવનશૈલી",
+      "▸ગ્રાઉન્ડ ફ્લોર પર કોમર્શિયલ શોપ્સ સાથે રહેણાંક અને વ્યવસાયનું સંયોજન",
+      "▸વિશાળ અને હવામાં ભરપૂર લેઆઉટ સાથે સ્માર્ટ ડિઝાઇન",
+      "▸ઉત્કૃષ્ટ રોડ કનેક્ટિવિટી અને પ્રાઇમ લોકેશન",
+      "▸24/7 પાણીની સુવિધા અને સુરક્ષિત ગેટેડ કેમ્પસ",
+      "▸રહેવાસીઓ માટે સમર્પિત પાર્કિંગ સુવિધા",
+      "▸શાળા, હોસ્પિટલ અને માર્કેટની નજીક સ્થિત",
+      "▸રોકાણ અને રહેવા માટે એક ઉત્તમ તક"
+    ],
+    "image": "assets/Silvassa-twin-tower-front.jpeg"
+  },
   {
     "id": 3,
     "name": "Silvassa Stone",
     "size": "3 BHK",
-      "areaSqFt": "1800",
-  "areaSqM": "167.22",    
+    "areaSqFt": "1800",
+    "areaSqM": "167.22",
     "status": "completed",
     "location": "",
-    
-  "amenities": [
-    "Power Backup",
+    "amenities": [
+      "Power Backup",
       "high speed Lift Facility",
       "Children play area",
-      "Landscap Garden",
-      "Multipurpose Garden",
       "Security System",
       "Attractive antance gate",
       "Senior Citizens Sitting",
       "Double Basement Parking"
-    ],  
-        "highlights": [
-      "Prime location",    
+    ],
+    "highlights": [
+      "Prime location",
       "Clear title property",
-        "Spacious layout",
-      "Good investment potential",  
+      "Spacious layout",
+      "Good investment potential",
       "Pick up zone"
-    ],  
-
+    ],
     "connectivity": [
       "Near main road",
       "main attraction whole city",
-        "Close to schools and hospitals",
-      "Public transport nearby"  
-    ],  
-
+      "Close to schools and hospitals",
+      "Public transport nearby"
+    ],
     "floorPlans": [
       "assets/silvassa-hill-floorplan1.jpg"
-    ],  
-
-
-  "mapEmbed": "https://www.google.com/maps?q=Silvassa+stone,+surat&output=embed",  
-  "gallery": [
-    
-  ],  
-  "description": [
-    "▸વિશાળ અને લક્ઝરી 3 BHK ફ્લેટ્સ સાથે પ્રીમિયમ જીવનશૈલી",
-    "▸બે આકર્ષક અને સુવ્યવસ્થિત બિલ્ડિંગ સાથેનું પ્રોજેક્ટ",
-    "▸વિશાળ લિવિંગ એરિયા અને નેચરલ લાઇટ સાથે સ્માર્ટ લેઆઉટ",
-    "▸ઉચ્ચ ગુણવત્તાવાળા બાંધકામ ધોરણો અને પ્રીમિયમ ફિનિશિંગ",
-    "▸24/7 પાણી અને વીજળીની સુવિધા",
-    "▸સુરક્ષિત ગેટેડ કેમ્પસ સાથે CCTV સર્વેલન્સ",
-    "▸રહેવાસીઓ માટે સમર્પિત પાર્કિંગ અને લિફ્ટ સુવિધા",
-    "▸શાળા, હોસ્પિટલ અને માર્કેટની નજીક પ્રાઇમ લોકેશન",
-    "▸પરિવાર માટે આદર્શ અને લાંબા ગાળાના રોકાણ માટે ઉત્તમ તક"
-  ],  
-      "image": ""
+    ],
+    "mapEmbed": "https://www.google.com/maps?q=Silvassa+stone,+surat&output=embed",
+    "gallery": [],
+    "description": [
+      "▸વિશાળ અને લક્ઝરી 3 BHK ફ્લેટ્સ સાથે પ્રીમિયમ જીવનશૈલી",
+      "▸બે આકર્ષક અને સુવ્યવસ્થિત બિલ્ડિંગ સાથેનું પ્રોજેક્ટ",
+      "▸વિશાળ લિવિંગ એરિયા અને નેચરલ લાઇટ સાથે સ્માર્ટ લેઆઉટ",
+      "▸ઉચ્ચ ગુણવત્તાવાળા બાંધકામ ધોરણો અને પ્રીમિયમ ફિનિશિંગ",
+      "▸24/7 પાણી અને વીજળીની સુવિધા",
+      "▸સુરક્ષિત ગેટેડ કેમ્પસ સાથે CCTV સર્વેલન્સ",
+      "▸રહેવાસીઓ માટે સમર્પિત પાર્કિંગ અને લિફ્ટ સુવિધા",
+      "▸શાળા, હોસ્પિટલ અને માર્કેટની નજીક પ્રાઇમ લોકેશન",
+      "▸પરિવાર માટે આદર્શ અને લાંબા ગાળાના રોકાણ માટે ઉત્તમ તક"
+    ],
+    "image": ""
   }
-
 ]
