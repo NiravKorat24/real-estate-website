@@ -143,6 +143,7 @@
     let allProperties = [];
     let floorPlanUnlocked = false;
     let pendingFloorPlanSrc = "";
+    let pendingBrochureDownload = false;
 
     const STORAGE_KEYS = {
       unlockPrefix: "sg_floor_unlock_"
@@ -381,6 +382,11 @@
         <button type="button" class="btn btn-gold outline-glow whatsapp-cta enquiry-trigger" onclick="handlePropertyEnquiry()">
           <i class="fa-brands fa-whatsapp"></i> ENQUIRE NOW
         </button>
+        ${site.brochure ? `
+          <button type="button" class="brochure-btn" style="width: 100%; text-align: center; display: block; box-sizing: border-box; margin-top: 14px; border: none; cursor: pointer;" onclick="handleBrochureClick()">
+            <i class="fa-solid fa-file-pdf"></i> DOWNLOAD BROCHURE
+          </button>
+        ` : ""}
       </div>
     </div>
 
@@ -505,6 +511,16 @@ ${site.floorPlans ? `
       openProjectPopupModal();
     }
 
+    function handleBrochureClick() {
+      if (!currentProperty || !currentProperty.brochure) return;
+      if (floorPlanUnlocked) {
+        window.open(currentProperty.brochure, "_blank");
+        return;
+      }
+      pendingBrochureDownload = true;
+      openProjectPopupModal();
+    }
+
     /* Classic Project Popup Functions */
     function checkAndOpenProjectPopup() {
       // Don't show if already submitted in this session
@@ -556,10 +572,17 @@ ${site.floorPlans ? `
 
       const areaMeta = getAreaMeta(currentProperty);
       const isFloorPlanClick = !!pendingFloorPlanSrc;
-      const source = isFloorPlanClick ? "floorplan_unlock" : "project_popup_enquiry";
+      const isBrochureClick = pendingBrochureDownload;
+
+      let source = "project_popup_enquiry";
+      if (isFloorPlanClick) source = "floorplan_unlock";
+      if (isBrochureClick) source = "brochure_download_unlock";
+
       const leadMessage = isFloorPlanClick
         ? (message ? `Floor Plan Click - Message: ${message}` : "Clicked Floor Plan to Unlock")
-        : message;
+        : (isBrochureClick
+          ? (message ? `Brochure Download Click - Message: ${message}` : "Clicked Download Brochure to Unlock")
+          : message);
 
       const leadPayload = {
         source: source,
@@ -583,7 +606,7 @@ ${site.floorPlans ? `
         // Record submission to mute future popup displays in this session
         sessionStorage.setItem("project_enquiry_submitted", "1");
 
-        // Unlock all floor plans for this property
+        // Unlock all floor plans and brochures for this property
         floorPlanUnlocked = true;
         unlockFloorPlan(currentProperty.id);
         markFloorPlansUnlockedInUI();
@@ -593,13 +616,16 @@ ${site.floorPlans ? `
         submitBtn.style.background = "#2e5a4a"; // Green feedback
         submitBtn.style.borderColor = "#2e5a4a";
 
-        // Small delay for smooth feedback, then close popup and open lightbox if needed
+        // Small delay for smooth feedback, then close popup and open lightbox or download brochure if needed
         setTimeout(() => {
           closeProjectPopupModal();
 
           if (isFloorPlanClick && pendingFloorPlanSrc) {
             openLightbox(pendingFloorPlanSrc);
             pendingFloorPlanSrc = "";
+          } else if (pendingBrochureDownload) {
+            window.open(currentProperty.brochure, "_blank");
+            pendingBrochureDownload = false;
           }
         }, 1500);
       });

@@ -1,6 +1,3 @@
-let currentIndex = 0;
-let autoSlideInterval;
-let touchStartX = 0;
 let allProperties = [];
 let filteredProperties = [];
 const PROPERTY_ENQUIRY_WHATSAPP = "9090129012";
@@ -53,66 +50,24 @@ function renderCards(list) {
     `;
   }).join("");
 
-  currentIndex = 0;
-  updateSlider();
-  createDots(list.length);
-  startAutoSlide();
-
   const countEl = document.getElementById("projectCount");
   if (countEl) countEl.textContent = list.length;
 }
 
-function updateSlider() {
-  const track = document.getElementById("propertyTrack");
-  if (!track) return;
-  track.style.transform = `translateX(-${currentIndex * 100}%)`;
-  updateDots();
-}
-
 function slidePrev() {
-  if (currentIndex > 0) {
-    currentIndex--;
-    updateSlider();
+  const slider = document.querySelector(".slider");
+  if (slider) {
+    const scrollAmount = slider.clientWidth * 0.75;
+    slider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
   }
 }
 
 function slideNext() {
-  const track = document.getElementById("propertyTrack");
-  if (!track) return;
-  const total = track.children.length;
-  if (currentIndex < total - 1) {
-    currentIndex++;
-    updateSlider();
+  const slider = document.querySelector(".slider");
+  if (slider) {
+    const scrollAmount = slider.clientWidth * 0.75;
+    slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
   }
-}
-
-function startAutoSlide() {
-  clearInterval(autoSlideInterval);
-  autoSlideInterval = setInterval(() => {
-    const track = document.getElementById("propertyTrack");
-    if (!track) return;
-    const total = track.children.length;
-    if (total === 0) return;
-    currentIndex = (currentIndex + 1) % total;
-    updateSlider();
-  }, 4000);
-}
-
-function createDots(count) {
-  const dots = document.getElementById("sliderDots");
-  dots.innerHTML = "";
-  for (let i = 0; i < count; i++) {
-    const span = document.createElement("span");
-    if (i === 0) span.classList.add("active");
-    dots.appendChild(span);
-  }
-}
-
-function updateDots() {
-  const dots = document.querySelectorAll("#sliderDots span");
-  dots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === currentIndex);
-  });
 }
 
 function buildFilterOptions(container, items, name) {
@@ -220,24 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("menuOverlay").addEventListener("click", closeMenu);
 });
 
-/* =========================================
-   TOUCH / SWIPE (MOBILE)
-========================================= */
-document.addEventListener("touchstart", e => {
-  const slider = e.target.closest(".slider");
-  if (!slider) return;
-  touchStartX = e.touches[0].clientX;
-  clearInterval(autoSlideInterval);
-}, { passive: true });
 
-document.addEventListener("touchend", e => {
-  const slider = e.target.closest(".slider");
-  if (!slider) return;
-
-  const diff = e.changedTouches[0].clientX - touchStartX;
-  if (Math.abs(diff) > 50) diff < 0 ? slideNext() : slidePrev();
-  startAutoSlide();
-}, { passive: true });
 
 /* =========================================
    VALUATION MODAL

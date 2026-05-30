@@ -9,6 +9,7 @@
     "status": "ongoing",
     "location": "Outer Ring Road, Mota Varachha",
     "address": "Silvassa Heaven,Gopin Gam Road, near the Abrama-Valak Bridge, Outer Ring Road, Mota Varachha, Surat",
+    "brochure": "assets/brochures/heaven-brochure.pdf",
     "amenities": [
       "Modern elevators",
       "Continuous water supply",
@@ -132,6 +133,7 @@
     "soldout": "yes",
     "location": "Mota Varachha , Surat",
     "size": "3 BHK",
+    "brochure": "assets/brochures/Silvassa Paradise Brochure.pdf",
     "amenities": [
       "2 Basement parking",
       "Lift facility",
@@ -167,7 +169,8 @@
       "assets/Silvassa_Paradise_5.jpeg",
       "assets/Silvassa_Paradise_6.jpeg",
       "assets/Silvassa_Paradise_7.jpeg",
-      "assets/Silvassa_Paradise_9.jpeg"
+      "assets/Silvassa_Paradise_9.jpeg",
+      "assets/Silvassa_Paradise_isometric.jpeg"
     ],
     "description": [
       "▸એલિટ 3 BHK નિવાસ માટે વિશેષ રીતે ડિઝાઇન કરાયેલ ટ્વિન ટાવર પ્રોજેક્ટ",
@@ -186,6 +189,66 @@
     "image": "assets/Silvassa_Paradise_9.jpeg"
   },
   {
+    "id": 8,
+    "name": "Silvassa Meritto",
+    "size": "3 BHK",
+    "type": "Residential",
+    "areaSqFt": "1750 & 1860",
+    "areaSqM": "162.58 & 172.79",
+    "status": "ongoing",
+    "location": "kosad , surat",
+    "address": "BL-207, Silvassa Meritto, Kosad, Surat, Gujarat, 394107",
+    "amenities": [
+      "High-speed lift",
+      "Basement parking",
+      "Landscap Garden",
+      "24/7 water & power backup",
+      "CCTV security",
+      "Grand entrance lobby"
+    ],
+    "highlights": [
+      "Premium luxury residences",
+      "Peaceful environment",
+      "Prime location",
+      "High-end construction quality",
+      "Elite lifestyle living"
+    ],
+    "connectivity": [
+      "Excellent road connectivity",
+      "Close to top schools & hospitals",
+      "Public transport nearby",
+      "Near shopping & city hubs"
+    ],
+    "floorPlans": [
+      "assets/silvassa-hill-floorplan1.jpg"
+    ],
+    "mapEmbed": "https://www.google.com/maps?q=Silvassa+Meritto,+surat&output=embed",
+    "gallery": [
+      "assets/merrito-5.jpeg",
+      "assets/merrito-6.jpeg",
+      "assets/merrito-4.jpeg",
+      "assets/merrito-7.jpeg",
+      "assets/merrito-3.jpeg",
+      "assets/merrito-1.jpg",
+      "assets/merrito-2.jpeg"
+    ],
+    "description": [
+      "▸લક્ઝરી 3 BHK નિવાસ માટે રચાયેલ ત્રણ ટાવર પ્રોજેક્ટ",
+      "▸શહેરના પ્રાઇમ અને વિકાસશીલ વિસ્તારમાં સ્થિત",
+      "▸ત્રણ ભવ્ય અને આધુનિક આર્કિટેક્ચર સાથે આકર્ષક ટાવર્સ",
+      "▸વિશાળ રૂમ્સ અને સ્માર્ટ લેઆઉટ સાથે આરામદાયક જીવનશૈલી",
+      "▸પ્રાકૃતિક પ્રકાશ અને ઉત્તમ વેન્ટિલેશન માટે ખાસ આયોજન",
+      "▸પ્રીમિયમ ક્વોલિટી મટીરિયલ અને એલેગન્ટ ઇન્ટિરિયર ફિનિશિંગ",
+      "▸ડબલ બેસમેન્ટ પાર્કિંગ સાથે સુવિધાસભર કેમ્પસ",
+      "▸24/7 પાણી અને વિશ્વસનીય વીજ પુરવઠો",
+      "▸CCTV સાથે સુરક્ષિત ગેટેડ કમ્યુનિટી",
+      "▸શાળા, હોસ્પિટલ અને માર્કેટની નજીક સુવિધાજનક સ્થાન",
+      "▸પરિવાર માટે શાંતિપૂર્ણ અને સુરક્ષિત વાતાવરણ",
+      "▸લાંબા ગાળાના રોકાણ માટે ઉત્તમ વિકલ્પ"
+    ],
+    "image": "assets/merrito-6.jpeg"
+  },
+  {
     "id": 5,
     "name": "Silvassa Bunglows",
     "size": " 924 & 1008 var",
@@ -197,6 +260,7 @@
     "soldout": "yes",
     "location": "Mota Varachha, Surat",
     "address": "Silvassa Bunglows,Near Aspire Public school,Mota Varachha, Surat, Gujarat ",
+    "brochure": "assets/brochures/Silvasa Bunglows Brochure.pdf",
     "amenities": [
       "Gated community",
       "24/7 water supply",
@@ -238,66 +302,6 @@
       "▸ પરિવાર માટે સુરક્ષિત અને લાંબા ગાળાના નિવાસ માટે આદર્શ પસંદગી"
     ],
     "image": ""
-  },
-  {
-    "id": 8,
-    "name": "Silvassa Meritto",
-    "size": "3 BHK",
-    "type": "Residential",
-    "areaSqFt": "1750 & 1860",
-    "areaSqM": "162.58 & 172.79",
-    "status": "ongoing",
-    "location": "kosad , surat",
-    "address": "BL-207, Silvassa Meritto, Kosad, Surat, Gujarat, 394107",
-    "amenities": [
-      "High-speed lift",
-      "Basement parking",
-      "Landscap Garden",
-      "24/7 water & power backup",
-      "CCTV security",
-      "Grand entrance lobby"
-    ],
-    "highlights": [
-      "Premium luxury residences",
-      "Peaceful environment",
-      "Prime location",
-      "High-end construction quality",
-      "Elite lifestyle living"
-    ],
-    "connectivity": [
-      "Excellent road connectivity",
-      "Close to top schools & hospitals",
-      "Public transport nearby",
-      "Near shopping & city hubs"
-    ],
-    "floorPlans": [
-      "assets/silvassa-hill-floorplan1.jpg"
-    ],
-    "mapEmbed": "https://www.google.com/maps?q=Silvassa+Meritto,+surat&output=embed",
-    "gallery": [
-      "assets/merrito-5.webp",
-      "assets/merrito-6.webp",
-      "assets/merrito-4.webp",
-      "assets/merrito-7.webp",
-      "assets/merrito-3.webp",
-      "assets/merrito-1.jpg",
-      "assets/merrito-2.webp"
-    ],
-    "description": [
-      "▸લક્ઝરી 3 BHK નિવાસ માટે રચાયેલ ત્રણ ટાવર પ્રોજેક્ટ",
-      "▸શહેરના પ્રાઇમ અને વિકાસશીલ વિસ્તારમાં સ્થિત",
-      "▸ત્રણ ભવ્ય અને આધુનિક આર્કિટેક્ચર સાથે આકર્ષક ટાવર્સ",
-      "▸વિશાળ રૂમ્સ અને સ્માર્ટ લેઆઉટ સાથે આરામદાયક જીવનશૈલી",
-      "▸પ્રાકૃતિક પ્રકાશ અને ઉત્તમ વેન્ટિલેશન માટે ખાસ આયોજન",
-      "▸પ્રીમિયમ ક્વોલિટી મટીરિયલ અને એલેગન્ટ ઇન્ટિરિયર ફિનિશિંગ",
-      "▸ડબલ બેસમેન્ટ પાર્કિંગ સાથે સુવિધાસભર કેમ્પસ",
-      "▸24/7 પાણી અને વિશ્વસનીય વીજ પુરવઠો",
-      "▸CCTV સાથે સુરક્ષિત ગેટેડ કમ્યુનિટી",
-      "▸શાળા, હોસ્પિટલ અને માર્કેટની નજીક સુવિધાજનક સ્થાન",
-      "▸પરિવાર માટે શાંતિપૂર્ણ અને સુરક્ષિત વાતાવરણ",
-      "▸લાંબા ગાળાના રોકાણ માટે ઉત્તમ વિકલ્પ"
-    ],
-    "image": "assets/merrito-6.webp"
   },
   {
     "id": 9,
@@ -354,6 +358,7 @@
     "soldout": "yes",
     "location": "Mota Varachha , Surat",
     "address": "Silavasa hill, Sarjan Rd, Mota Varachha, Surat, Gujarat 394101",
+    "brochure": "assets/brochures/Silvassa Hill broucher.pdf",
     "amenities": [
       "Banquet hall for functions",
       "Exclusive penthouses",
@@ -379,9 +384,16 @@
     ],
     "mapEmbed": "https://www.google.com/maps?q=SilvassaHill,+surat&output=embed",
     "gallery": [
+      "assets/silvassa-hill-1.jpeg",
       "assets/Silvassa-hill-front.jpeg",
-      "https://is1-3.housingcdn.com/4f2250e8/a6338d641255b4e8dcdc270924806783/v0/large/shree_hari_silvassa_hill-mota_varachha-surat-shree_hari_buildcon.jpeg",
-      "https://www.a2zproperty.in/Gujarat/Surat/silvassa-hill/145813_const-720.jpg"
+      "assets/silvassa-hill-2.jpeg",
+      "assets/silvassa-hill-3.jpeg",
+      "assets/silvassa-hill-4.jpeg",
+      "assets/silvassa-hill-5.jpeg",
+      "assets/silvassa-hill-6.jpeg",
+      "assets/silvassa-hill-7.jpeg",
+      "assets/silvassa-hill-8.jpeg",
+      "assets/silvassa-hill-9.jpeg"
     ],
     "description": [
       "▸પ્રીમિયમ રહેણાંક પ્રોજેક્ટ, જે આધુનિક અને આરામદાયક જીવન માટે રચાયેલ છે",
@@ -393,7 +405,7 @@
       "▸ઉચ્ચ ગુણવત્તાવાળા નિર્માણ ધોરણો અને આકર્ષક બાહ્ય ડિઝાઇન",
       "▸શાળા, હોસ્પિટલ, શોપિંગ સેન્ટર અને પરિવહન સુવિધાઓની નજીક સ્થિત."
     ],
-    "image": "assets/Silvassa-hill-front.jpeg"
+    "image": "assets/silvassa-hill-1.jpeg"
   },
   {
     "id": 2,
@@ -406,6 +418,7 @@
     "status": "completed",
     "location": "Mota Varachha , Surat",
     "address": "Silvassa Twin Tower ,Aspire Road, Nr. Sumeru Sky, Mota Varachha, Mota Varachha, Surat, Gujarat 394101",
+    "brochure": "assets/brochures/Silvassa twin brochure.pdf",
     "amenities": [
       "Lift Facility",
       "Double Basement Parking",
@@ -434,7 +447,15 @@
       "assets/silvassa_Twintower-plan2.jpeg",
       "assets/silvassa_Twintower-plan3.jpeg"
     ],
-    "gallery": [],
+    "gallery": [
+      "assets/Cam_05.jpg",
+      "assets/Cam_024-.jpg",
+      "assets/cam_01_day.jpg",
+      "assets/Cam_01_Night.jpg",
+      "assets/Cam_06.jpg",
+      "assets/Cam_016.jpg",
+      "assets/Cam_033.jpg"
+    ],
     "mapEmbed": "https://www.google.com/maps?q=Silvassa+Twin+Tower,+surat&output=embed",
     "description": [
       "▸આધુનિક 2 BHK પ્રીમિયમ ફ્લેટ્સ સાથે આરામદાયક જીવનશૈલી",
@@ -455,7 +476,11 @@
     "areaSqFt": "1800",
     "areaSqM": "167.22",
     "status": "completed",
-    "location": "",
+    "location": "Mota Varachha , Surat",
+    "type": "Residential",
+    "soldout": "yes",
+    "address": "Silvassa Stone,Near Capital Lawns Cricket Ground,Aspire Road,Mota varachha, Surat",
+    "brochure": "assets/brochures/Silvassa Stone Brochure.pdf",
     "amenities": [
       "Power Backup",
       "high speed Lift Facility",
