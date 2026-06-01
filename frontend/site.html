@@ -4,9 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Details</title>
+  <title>Project Details | Silvassa Group | Best Real Estate company in Surat</title>
+  <meta name="description" content="Project Details | Silvassa Group | Best Real Estate company in Surat">
+  <meta name="keywords" content="Project Details | Silvassa Group | Best Real Estate company in Surat">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
 </head>
 
 <body>
@@ -84,18 +87,23 @@
   <div id="projectPopupModal" class="modal" onclick="closeProjectPopupModal()">
     <div class="modal-box classic-popup-box" onclick="event.stopPropagation()">
       <span class="modal-close" onclick="closeProjectPopupModal()">✕</span>
-      <span class="sold-out-kicker" style="display: block; text-align: center; margin-bottom: 8px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #9b8766; font-weight: 600;">Private Presentation</span>
+      <span class="sold-out-kicker"
+        style="display: block; text-align: center; margin-bottom: 8px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #9b8766; font-weight: 600;">Private
+        Presentation</span>
       <h3 style="margin-bottom: 10px;">Schedule A Site Visit</h3>
       <p style="text-align: center; font-size: 14px; color: #6f6556; margin-bottom: 24px; line-height: 1.5;">
-        Please enter your details to receive premium brochures, pricing plans, and exclusive site updates for <strong id="popupProjectName">this property</strong>.
+        Please enter your details to receive premium brochures, pricing plans, and exclusive site updates for <strong
+          id="popupProjectName">this property</strong>.
       </p>
       <form id="projectPopupForm" onsubmit="submitProjectPopup(event)">
         <input id="popupName" type="text" placeholder="Your Name" required>
         <input id="popupPhone" type="tel" placeholder="Mobile Number" required>
-        <textarea id="popupMessage" placeholder="Any specific questions or budget? (Optional)" rows="2" style="min-height: 70px;"></textarea>
+        <textarea id="popupMessage" placeholder="Any specific questions or budget? (Optional)" rows="2"
+          style="min-height: 70px;"></textarea>
         <button id="popupSubmitBtn" type="submit">Submit Enquiry</button>
       </form>
-      <p id="popupError" style="color: #c0392b; font-size: 13px; text-align: center; margin-top: 12px; font-weight: 500;"></p>
+      <p id="popupError"
+        style="color: #c0392b; font-size: 13px; text-align: center; margin-top: 12px; font-weight: 500;"></p>
     </div>
   </div>
 
@@ -344,6 +352,7 @@
           : (site.description ? [site.description] : []);
 
         currentProperty = site;
+        document.title = `${site.name} | Silvassa Group`;
         galleryImages = site.gallery || [site.image];
         currentIndex = 0;
         floorPlanUnlocked = isFloorPlanUnlocked(site.id);
