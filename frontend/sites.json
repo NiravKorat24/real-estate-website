@@ -516,7 +516,11 @@
       "assets/silvassa-hill-floorplan1.jpg"
     ],
     "mapEmbed": "https://www.google.com/maps?q=Silvassa+stone,+surat&output=embed",
-    "gallery": [],
+    "gallery": [
+      "assets/ston3.jpeg",
+      "assets/ston2.jpeg",
+      "assets/ston1.jpeg"
+    ],
     "description": [
       "▸વિશાળ અને લક્ઝરી 3 BHK ફ્લેટ્સ સાથે પ્રીમિયમ જીવનશૈલી",
       "▸બે આકર્ષક અને સુવ્યવસ્થિત બિલ્ડિંગ સાથેનું પ્રોજેક્ટ",
@@ -528,7 +532,7 @@
       "▸શાળા, હોસ્પિટલ અને માર્કેટની નજીક પ્રાઇમ લોકેશન",
       "▸પરિવાર માટે આદર્શ અને લાંબા ગાળાના રોકાણ માટે ઉત્તમ તક"
     ],
-    "image": "",
+    "image": "assets/ston2.jpeg",
     "video": ""
   }
 ]
