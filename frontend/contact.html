@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
 </head>
+
 <body>
 
   <header class="header">
@@ -53,87 +55,90 @@
   </div>
   <div class="overlay" id="menuOverlay"></div>
 
-<!-- ================= HERO ================= -->
-<section class="hero contact-hero relative animate-on-scroll fade-in">
-  <div class="hero-overlay"></div>
-  <div class="hero-text">
-    <h1>Contact Us</h1>
-    <p>Call or WhatsApp us for site visits and distinguished guidance</p>
-    <p><i class="fa-solid fa-phone"></i> +91 9090129012</p>
-  </div>
-</section>
+  <!-- ================= HERO ================= -->
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer animate-on-scroll fade-in">
-  <div class="footer-col footer-brand">
-    <h4>Silvassa Group</h4>
-    <p>
-વિશ્વાસ, ગુણવત્તા અને ભવિષ્યના વિકાસ સાથે રેસિડેન્શિયલ અને કોમર્શિયલ મિલ્કતોનું સુવ્યવસ્થિત નિર્માણ  
-    </p>
-  </div>
-
-  <div class="footer-col">
-    <h4>Contact</h4>
-    <p><i class="fa-solid fa-phone"></i> +91 9090129012</p>
-    <p><i class="fa-solid fa-envelope"></i> silvassagroupsurat2017@gmail.com</p>
-  </div>
-
-  <div class="footer-col">
-    <h4>Business Hours</h4>
-    <p>Mon–Sun: 9:30AM – 6:30PM</p>
-  </div>
-
-  <div class="footer-col">
-    <h4>Get Social</h4>
-    <div class="social-icons">
-      <a href="https://www.facebook.com"><img src="assets/facebook.png" alt=""></a>
-      <a href="https://www.instagram.com/silvassa__group"><img src="assets/instagram.png" alt=""></a>
-      <a href="https://www.LinkedIn.com"><img src="assets/linkedin_logo.png" alt=""></a>
+  <section class="hero contact-hero relative animate-on-scroll fade-in">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <h1>Contact Us</h1>
+      <p>Call or WhatsApp us for site visits and distinguished guidance</p>
+      <p><i class="fa-solid fa-phone"></i> +91 9090129012</p>
     </div>
-  </div>
-  <div class="footer-bottom">
-    © 2026 Silvassa Group. All rights reserved.
-  </div>
-</footer>
+  </section>
 
-<script>
-function initScrollObserver() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="footer animate-on-scroll fade-in">
+    <div class="footer-col footer-brand">
+      <h4>Silvassa Group</h4>
+      <p>
+        વિશ્વાસ, ગુણવત્તા અને ભવિષ્યના વિકાસ સાથે રેસિડેન્શિયલ અને કોમર્શિયલ મિલ્કતોનું સુવ્યવસ્થિત નિર્માણ
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><i class="fa-solid fa-phone"></i> +91 9090129012</p>
+      <p><i class="fa-solid fa-envelope"></i> silvassagroupsurat2017@gmail.com</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Business Hours</h4>
+      <p>Mon–Sun: 9:30AM – 6:30PM</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Get Social</h4>
+      <div class="social-icons">
+        <a href="https://www.facebook.com"><img src="assets/facebook.png" alt=""></a>
+        <a href="https://www.instagram.com/silvassa__group"><img src="assets/instagram.png" alt=""></a>
+        <a href="https://www.LinkedIn.com"><img src="assets/linkedin_logo.png" alt=""></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Silvassa Group. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    function initScrollObserver() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    }
+    document.addEventListener("DOMContentLoaded", initScrollObserver);
+
+    // Mobile Menu Logic
+    const menuToggle = document.getElementById("menuToggle");
+    const menuClose = document.getElementById("menuClose");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const menuOverlay = document.getElementById("menuOverlay");
+
+    function openMenu() {
+      if (mobileMenu && menuOverlay) {
+        mobileMenu.classList.add("active");
+        menuOverlay.classList.add("active");
       }
-    });
-  }, { threshold: 0.1 });
+    }
 
-  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-}
-document.addEventListener("DOMContentLoaded", initScrollObserver);
+    function closeMenu() {
+      if (mobileMenu && menuOverlay) {
+        mobileMenu.classList.remove("active");
+        menuOverlay.classList.remove("active");
+      }
+    }
 
-// Mobile Menu Logic
-const menuToggle = document.getElementById("menuToggle");
-const menuClose = document.getElementById("menuClose");
-const mobileMenu = document.getElementById("mobileMenu");
-const menuOverlay = document.getElementById("menuOverlay");
-
-function openMenu() {
-  if (mobileMenu && menuOverlay) {
-    mobileMenu.classList.add("active");
-    menuOverlay.classList.add("active");
-  }
-}
-
-function closeMenu() {
-  if (mobileMenu && menuOverlay) {
-    mobileMenu.classList.remove("active");
-    menuOverlay.classList.remove("active");
-  }
-}
-
-if (menuToggle) menuToggle.addEventListener("click", openMenu);
-if (menuClose) menuClose.addEventListener("click", closeMenu);
-if (menuOverlay) menuOverlay.addEventListener("click", closeMenu);
-</script>
+    if (menuToggle) menuToggle.addEventListener("click", openMenu);
+    if (menuClose) menuClose.addEventListener("click", closeMenu);
+    if (menuOverlay) menuOverlay.addEventListener("click", closeMenu);
+  </script>
 
 </body>
+
 </html>

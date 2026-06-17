@@ -24,10 +24,11 @@ function renderCards(list) {
 
   track.innerHTML = list.map(site => {
     const statusText = site.status === "ongoing" ? "Under Construction" : "Ready to Move";
+    const projectSlug = site.name.replace(/\s+/g, '');
 
     return `
       <div class="property-card">
-        <a href="site.html?id=${site.id}" class="property-card-inner property-card-link" aria-label="Open ${site.name}">
+        <a href="/projects/${projectSlug}" class="property-card-inner property-card-link" aria-label="Open ${site.name}">
           <div class="card-media" style="--card-image: url('${site.image}')">
             <span class="card-badge ${site.status ? site.status.toLowerCase() : 'available'}">${statusText}</span>
             <img src="${site.image}" alt="${site.name}" loading="lazy" decoding="async">

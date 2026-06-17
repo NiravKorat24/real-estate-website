@@ -18,6 +18,10 @@ app.get("/api/sites/:id", (req, res) => {
   res.json(site);
 });
 
+app.get("/projects/:name", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "frontend", "site.html"));
+});
+
 app.listen(3000, () => {
   console.log("Server running on http://localhost:3000");
 });

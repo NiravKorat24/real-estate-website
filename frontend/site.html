@@ -8,15 +8,15 @@
   <meta name="description" content="Project Details | Silvassa Group | Best Real Estate company in Surat">
   <meta name="keywords" content="Project Details | Silvassa Group | Best Real Estate company in Surat">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
 </head>
 
 <body>
 
   <header class="header">
-    <a class="logo" href="index.html" aria-label="Silvassa Group Home">
-      <img src="assets/Silvassa-Group-Surat-525x328.png" alt="SILVASSA GROUP">
+    <a class="logo" href="/index.html" aria-label="Silvassa Group Home">
+      <img src="/assets/Silvassa-Group-Surat-525x328.png" alt="SILVASSA GROUP">
       <div class="brand-text">
         <span class="brand-eyebrow">Since 2016</span>
         <span class="brand-name">Silvassa Group</span>
@@ -25,16 +25,16 @@
     </a>
 
     <nav class="header-nav" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a href="projects.html" class="is-active">Projects</a>
-      <a href="contact.html">Contact</a>
+      <a href="/index.html">Home</a>
+      <a href="/projects.html" class="is-active">Projects</a>
+      <a href="/contact.html">Contact</a>
     </nav>
     <div class="header-actions">
       <a class="header-contact-pill" href="tel:+919090129012">
         <span>Call Us</span>
         <strong>+91 90901 29012</strong>
       </a>
-      <a class="header-cta" href="contact.html">Book Site Visit</a>
+      <a class="header-cta" href="/contact.html">Book Site Visit</a>
     </div>
     <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
       <span></span>
@@ -50,9 +50,9 @@
       </div>
       <button id="menuClose" aria-label="Close menu">✕</button>
     </div>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
+    <a href="/index.html">Home</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/contact.html">Contact</a>
     <a href="tel:+919090129012">Call Us</a>
   </div>
   <div class="overlay" id="menuOverlay"></div>
@@ -77,7 +77,7 @@
       </p>
       <div id="soldOutRecommendations" class="sold-out-recommendations"></div>
       <div class="sold-out-modal-actions">
-        <a class="sold-out-secondary-link" href="projects.html">Browse All Projects</a>
+        <a class="sold-out-secondary-link" href="/projects.html">Browse All Projects</a>
         <button type="button" onclick="openGeneralEnquiry()">Ask For Similar Options</button>
       </div>
     </div>
@@ -133,9 +133,9 @@
     <div class="footer-col">
       <h4>Get Social</h4>
       <div class="social-icons">
-        <a href="https://www.facebook.com"><img src="assets/facebook.png" alt=""></a>
-        <a href="https://www.instagram.com/silvassa__group"><img src="assets/instagram.png" alt=""></a>
-        <a href="https://www.LinkedIn.com"><img src="assets/linkedin_logo.png" alt=""></a>
+        <a href="https://www.facebook.com"><img src="/assets/facebook.png" alt=""></a>
+        <a href="https://www.instagram.com/silvassa__group"><img src="/assets/instagram.png" alt=""></a>
+        <a href="https://www.LinkedIn.com"><img src="/assets/linkedin_logo.png" alt=""></a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -144,7 +144,12 @@
   </footer>
 
   <script>
-    const id = new URLSearchParams(window.location.search).get("id");
+    const urlParams = new URLSearchParams(window.location.search);
+    const queryId = urlParams.get("id");
+
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    const projectSlug = pathParts.includes('projects') ? pathParts[pathParts.indexOf('projects') + 1] : null;
+
     let galleryImages = [];
     let currentIndex = 0;
     let currentProperty = {};
@@ -160,6 +165,14 @@
     const FLOORPLAN_LEAD_WHATSAPP = "9090129012";
     const PROPERTY_ENQUIRY_WHATSAPP = "9090129012";
     const FLOORPLAN_LEAD_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwVqqXvt60rFxYjRjt5NGTOfwfOAJG4wZr9205K-SeNM8zTJBpJbB1sKwMwRZWe40U7AQ/exec";
+
+    function getAbsolutePath(path) {
+      if (!path) return "";
+      if (path.startsWith("/") || path.startsWith("http://") || path.startsWith("https://") || path.startsWith("data:")) {
+        return path;
+      }
+      return "/" + path;
+    }
 
     function buildWhatsAppMessage(lines) {
       return encodeURIComponent(lines.join("\n"));
@@ -233,6 +246,7 @@
       return { label: "Area", value: formatArea(site) };
     }
 
+    // Check if property is sold out
     function isPropertySoldOut(site) {
       if (!site) return false;
       return String(site.soldout || "").trim().toLowerCase() === "yes";
@@ -289,9 +303,11 @@
 
       container.innerHTML = suggestions.map((property) => {
         const areaMeta = getAreaMeta(property);
+        const imgUrl = getAbsolutePath(property.image || (property.gallery && property.gallery[0]) || "");
+        const slug = property.name.replace(/\s+/g, '');
         return `
       <article class="sold-out-suggestion-card">
-        <img src="${property.image || (property.gallery && property.gallery[0]) || ""}" alt="${property.name}" loading="lazy" decoding="async">
+        <img src="${imgUrl}" alt="${property.name}" loading="lazy" decoding="async">
         <div class="sold-out-suggestion-body">
           <div class="sold-out-suggestion-top">
             <h4>${property.name}</h4>
@@ -302,7 +318,7 @@
             <span>${property.size || property.type || "Property"}</span>
             <span>${areaMeta.value || "-"}</span>
           </div>
-          <a href="site.html?id=${property.id}" class="sold-out-suggestion-link">View Property</a>
+          <a href="/projects/${slug}" class="sold-out-suggestion-link">View Property</a>
         </div>
       </article>
     `;
@@ -341,12 +357,36 @@
       window.open(`https://wa.me/${PROPERTY_ENQUIRY_WHATSAPP}?text=${msg}`, "_blank");
     }
 
-    fetch("sites.json")
+    fetch("/sites.json")
       .then(res => res.json())
       .then(data => {
         allProperties = data || [];
-        const site = data.find(p => String(p.id) === String(id));
+        
+        let site = null;
+        if (projectSlug) {
+          const cleanSlug = projectSlug.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+          site = data.find(p => p.name.replace(/[^a-zA-Z0-9]/g, '').toLowerCase() === cleanSlug);
+        }
+        if (!site && queryId) {
+          site = data.find(p => String(p.id) === String(queryId));
+          if (site) {
+            const slug = site.name.replace(/\s+/g, '');
+            window.history.replaceState(null, "", `/projects/${slug}`);
+          }
+        }
+
         if (!site) return;
+
+        // Make relative paths absolute
+        if (site.image) site.image = getAbsolutePath(site.image);
+        if (site.gallery) {
+          site.gallery = site.gallery.map(img => getAbsolutePath(img));
+        }
+        if (site.brochure) site.brochure = getAbsolutePath(site.brochure);
+        if (site.floorPlans) {
+          site.floorPlans = site.floorPlans.map(img => getAbsolutePath(img));
+        }
+
         const areaMeta = getAreaMeta(site);
         const descriptionItems = Array.isArray(site.description)
           ? site.description

@@ -15,9 +15,10 @@ function renderProjects(list) {
           : project.status || "Available";
       const statusClass = project.status ? project.status.toLowerCase() : "available";
 
+      const projectSlug = project.name.replace(/\s+/g, '');
       return `
         <article class="project-card">
-          <a href="site.html?id=${project.id}" class="project-card-img-link">
+          <a href="/projects/${projectSlug}" class="project-card-img-link">
             <img src="${project.image}" alt="${project.name}" loading="lazy" decoding="async">
           </a>
           <div class="project-card-body">
@@ -31,7 +32,7 @@ function renderProjects(list) {
               <span>${project.price ? project.price : "Price on request"}</span>
             </div>
             <div class="project-actions">
-              <a class="primary" href="site.html?id=${project.id}">EXPLORE WITH US</a>
+              <a class="primary" href="/projects/${projectSlug}">EXPLORE WITH US</a>
               <a href="contact.html">Enquire</a>
             </div>
           </div>
