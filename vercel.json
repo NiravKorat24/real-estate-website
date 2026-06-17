@@ -1,6 +1,6 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/projects/:name", "destination": "/frontend/site.html" }
+    { "source": "/projects/:name", "destination": "/site.html" }
   ]
 }
