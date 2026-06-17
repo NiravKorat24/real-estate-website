@@ -58,7 +58,8 @@
       "▸પરિવાર માટે સુરક્ષિત અને શાંતિપૂર્ણ વાતાવરણ",
       "▸લાંબા ગાળાના રોકાણ માટે ઉત્તમ તક"
     ],
-    "image": "assets/Silvassa_heven001C.jpg.jpeg"
+    "image": "assets/Silvassa_heven001C.jpg.jpeg",
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4"
   },
   {
     "id": 7,
@@ -120,7 +121,8 @@
       "▸પરિવાર માટે શાંતિપૂર્ણ અને સુરક્ષિત વાતાવરણ",
       "▸લાંબા ગાળાના રોકાણ માટે ઉત્તમ તક"
     ],
-    "image": "assets/silvassa-sunlight-main.jpeg"
+    "image": "assets/silvassa-sunlight-main.jpeg",
+    "video": ""
   },
   {
     "id": 4,
@@ -186,7 +188,8 @@
       "▸શાંતિપૂર્ણ અને પરિવાર માટે અનુકૂળ વાતાવરણ",
       "▸લાંબા ગાળાના રોકાણ અને ઊંચા રિટર્ન માટે ઉત્તમ તક"
     ],
-    "image": "assets/Silvassa_Paradise_9.jpeg"
+    "image": "assets/Silvassa_Paradise_9.jpeg",
+    "video": ""
   },
   {
     "id": 8,
@@ -246,7 +249,8 @@
       "▸પરિવાર માટે શાંતિપૂર્ણ અને સુરક્ષિત વાતાવરણ",
       "▸લાંબા ગાળાના રોકાણ માટે ઉત્તમ વિકલ્પ"
     ],
-    "image": "assets/merrito-6.jpeg"
+    "image": "assets/merrito-6.jpeg",
+    "video": ""
   },
   {
     "id": 5,
@@ -301,7 +305,8 @@
       "▸ રોકાણ માટે ઊંચી વૃદ્ધિ સંભાવના અને મજબૂત રિટર્ન",
       "▸ પરિવાર માટે સુરક્ષિત અને લાંબા ગાળાના નિવાસ માટે આદર્શ પસંદગી"
     ],
-    "image": ""
+    "image": "",
+    "video": ""
   },
   {
     "id": 9,
@@ -331,7 +336,7 @@
       "assets/SILVASSA EMBRO PARK-plan.jpg"
     ],
     "mapEmbed": "https://www.google.com/maps?q=Silvassa+EmbroPark+1,+surat&output=embed",
-    "brochure" : "assets/brochures/SILVASSA EMBRO PARK.pdf",
+    "brochure": "assets/brochures/SILVASSA EMBRO PARK.pdf",
     "gallery": [],
     "description": [
       "▸એમ્બ્રોઇડરી અને ગાર્મેન્ટ ઉદ્યોગ માટે આધુનિક સુવિધાઓ સાથે વિકસિત ઇન્ડસ્ટ્રિયલ પાર્ક",
@@ -346,7 +351,8 @@
       "▸કર્મચારીઓ માટે આરામદાયક સુવિધાઓ અને સગવડો",
       "▸લાંબા ગાળાના ઔદ્યોગિક રોકાણ માટે વિશ્વસનીય વિકલ્પ"
     ],
-    "image": ""
+    "image": "",
+    "video": "assets/video/Embropark.mp4"
   },
   {
     "id": 1,
@@ -406,7 +412,8 @@
       "▸ઉચ્ચ ગુણવત્તાવાળા નિર્માણ ધોરણો અને આકર્ષક બાહ્ય ડિઝાઇન",
       "▸શાળા, હોસ્પિટલ, શોપિંગ સેન્ટર અને પરિવહન સુવિધાઓની નજીક સ્થિત."
     ],
-    "image": "assets/silvassa-hill-1.jpeg"
+    "image": "assets/silvassa-hill-1.jpeg",
+    "video": ""
   },
   {
     "id": 2,
@@ -468,7 +475,8 @@
       "▸શાળા, હોસ્પિટલ અને માર્કેટની નજીક સ્થિત",
       "▸રોકાણ અને રહેવા માટે એક ઉત્તમ તક"
     ],
-    "image": "assets/cam_05.jpg"
+    "image": "assets/cam_05.jpg",
+    "video": ""
   },
   {
     "id": 3,
@@ -520,6 +528,7 @@
       "▸શાળા, હોસ્પિટલ અને માર્કેટની નજીક પ્રાઇમ લોકેશન",
       "▸પરિવાર માટે આદર્શ અને લાંબા ગાળાના રોકાણ માટે ઉત્તમ તક"
     ],
-    "image": ""
+    "image": "",
+    "video": ""
   }
 ]

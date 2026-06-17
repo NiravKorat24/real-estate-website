@@ -18,7 +18,7 @@
     <a class="logo" href="index.html" aria-label="Silvassa Group Home">
       <img src="assets/Silvassa-Group-Surat-525x328.png" alt="SILVASSA GROUP">
       <div class="brand-text">
-        <span class="brand-eyebrow">Since 2016</span>
+        <span class="brand-eyebrow">Since 2010</span>
         <span class="brand-name">Silvassa Group</span>
         <span class="brand-tagline">Premium Properties</span>
       </div>
@@ -418,6 +418,14 @@
 
     <!-- CONTENT -->
     <div class="detail-content">
+${site.video ? `
+<div class="info-block animate-on-scroll slide-up video-section" style="background: transparent; border: none; box-shadow: none; padding: 0;">
+  <h2 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 32px; color: var(--champagne); margin-bottom: 30px;"></h2>
+  <div class="video-container">
+    <video id="projectVideo" src="${site.video}" loop playsinline controls></video>
+  </div>
+</div>` : ""}
+
 ${site.highlights ? `
 <div class="info-block">
   <h4>Key Highlights</h4>
@@ -484,6 +492,11 @@ ${site.floorPlans ? `
 
         // Initialize observer right after injecting
         setTimeout(initScrollObserver, 100);
+
+        // Initialize video autoplay logic if video exists
+        if (site.video) {
+          setTimeout(initAutoplayVideo, 100);
+        }
 
         // Trigger classic popup after a 1.2 second delay
         setTimeout(checkAndOpenProjectPopup, 1200);
@@ -676,6 +689,40 @@ ${site.floorPlans ? `
       })
         .then(() => true)
         .catch(() => false);
+    }
+
+    function initAutoplayVideo() {
+      const video = document.getElementById("projectVideo");
+      if (!video) return;
+
+      // Attempt unmuted play first
+      video.muted = false;
+      video.play()
+        .catch(error => {
+          console.log("Autoplay with sound blocked. Autoplay muted...", error);
+
+          // Fallback to muted autoplay
+          video.muted = true;
+          video.play().catch(err => console.log("Muted play also blocked:", err));
+
+          // Listen for the first user interaction to unmute and play with sound
+          const unmuteOnInteraction = () => {
+            video.muted = false;
+            video.play().catch(e => console.log("Unmute on interaction failed:", e));
+
+            cleanupInteractionListeners();
+          };
+
+          const cleanupInteractionListeners = () => {
+            document.removeEventListener('click', unmuteOnInteraction);
+            document.removeEventListener('keydown', unmuteOnInteraction);
+            document.removeEventListener('touchstart', unmuteOnInteraction);
+          };
+
+          document.addEventListener('click', unmuteOnInteraction);
+          document.addEventListener('keydown', unmuteOnInteraction);
+          document.addEventListener('touchstart', unmuteOnInteraction);
+        });
     }
 
 

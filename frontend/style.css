@@ -3280,3 +3280,30 @@ section {
     text-align: center;
   }
 }
+
+/* Video Section Styles */
+.video-section {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: var(--shadow-strong);
+  border: 1px solid rgba(195, 163, 98, 0.3);
+  background: #000000;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  max-height: 75vh;
+  display: block;
+  object-fit: contain;
+}
+
