@@ -1,6 +1,1 @@
-{
-  "cleanUrls": true,
-  "routes": [
-    { "src": "/projects/.*", "dest": "/site.html" }
-  ]
-}
+{}
