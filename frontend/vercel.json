@@ -1,6 +1,6 @@
 {
   "cleanUrls": true,
-  "rewrites": [
-    { "source": "/projects/:name", "destination": "/site.html" }
+  "routes": [
+    { "src": "/projects/.*", "dest": "/site.html" }
   ]
 }
