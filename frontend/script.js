@@ -237,4 +237,56 @@ function initScrollObserver() {
   document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 }
 
+/* =========================================
+   STATISTICS COUNTERS ANIMATION
+========================================= */
+function initStatsCounters() {
+  const counters = document.querySelectorAll('.stats-val[data-target]');
+  if (counters.length === 0) return;
+
+  const duration = 2000; // Animation duration in milliseconds
+
+  // Initialize all elements with 0 + their suffix
+  counters.forEach(counter => {
+    const suffix = counter.getAttribute('data-suffix') || '';
+    counter.textContent = '0' + suffix;
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        observer.unobserve(counter); // Only animate once
+
+        const target = parseInt(counter.getAttribute('data-target'), 10);
+        const suffix = counter.getAttribute('data-suffix') || '';
+        const startTime = performance.now();
+
+        function update(currentTime) {
+          const elapsedTime = currentTime - startTime;
+          const progress = Math.min(elapsedTime / duration, 1);
+          
+          // Easing function (easeOutQuad) for smoother look
+          const easeProgress = progress * (2 - progress);
+          const currentValue = Math.floor(easeProgress * target);
+
+          counter.textContent = currentValue + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            counter.textContent = target + suffix;
+          }
+        }
+
+        requestAnimationFrame(update);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  counters.forEach(counter => observer.observe(counter));
+}
+
 document.addEventListener("DOMContentLoaded", initScrollObserver);
+document.addEventListener("DOMContentLoaded", initStatsCounters);
+
